@@ -220,7 +220,7 @@ elseif($method=='reduction')
 		showMsg ( '数据库还原完毕，请重新登录后更新系统缓存', '?m=db-list' );
 	}
     else{
-    	
+    
     	for($j=1;$j<=$fcount;$j++){
     		if($j==$num){
 				$fpath = 'bak/'.$file . '-'.$j.'.sql';
@@ -230,7 +230,7 @@ elseif($method=='reduction')
 				{
 					$sql = str_replace(chr(10),'',$sql);
 					$sql = str_replace(chr(13),'',$sql);
-					if (!isN($sql)){
+					if (!empty($sql)){
 						$db->query(trim($sql));
 					}
 					unset($sql);
