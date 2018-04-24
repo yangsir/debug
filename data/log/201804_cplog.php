@@ -1,0 +1,17 @@
+<?PHP exit;?>	1524555262	admin	1	192.168.0.21		GET={}; POST={};
+<?PHP exit;?>	1524555262	admin	1	192.168.0.21	index	GET={}; POST={};
+<?PHP exit;?>	1524555263	admin	1	192.168.0.21	checktools	GET={operation=filecheck; homecheck=yes; inajax=1; ajaxtarget=filecheck_div; }; POST={};
+<?PHP exit;?>	1524555266	admin	1	192.168.0.21	setting	GET={operation=basic; }; POST={};
+<?PHP exit;?>	1524555267	admin	1	192.168.0.21	nav	GET={}; POST={};
+<?PHP exit;?>	1524555267	admin	1	192.168.0.21	moderate	GET={}; POST={};
+<?PHP exit;?>	1524555269	admin	1	192.168.0.21	members	GET={operation=search; }; POST={};
+<?PHP exit;?>	1524555269	admin	1	192.168.0.21	portalcategory	GET={}; POST={};
+<?PHP exit;?>	1524555270	admin	1	192.168.0.21	forums	GET={}; POST={};
+<?PHP exit;?>	1524555271	admin	1	192.168.0.21	group	GET={operation=setting; }; POST={};
+<?PHP exit;?>	1524555271	admin	1	192.168.0.21	setting	GET={operation=sec; }; POST={};
+<?PHP exit;?>	1524555272	admin	1	192.168.0.21	announce	GET={}; POST={};
+<?PHP exit;?>	1524555272	admin	1	192.168.0.21	plugins	GET={}; POST={};
+<?PHP exit;?>	1524555272	admin	1	192.168.0.21	tools	GET={operation=updatecache; }; POST={};
+<?PHP exit;?>	1524555273	admin	1	192.168.0.21	founder	GET={operation=perm; }; POST={};
+<?PHP exit;?>	1524555275	admin	1	192.168.0.21	founder	GET={operation=perm; }; POST={};
+<?PHP exit;?>	1524555276	admin	1	192.168.0.21	tools	GET={operation=updatecache; }; POST={};
