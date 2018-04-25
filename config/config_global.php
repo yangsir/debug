@@ -9,7 +9,7 @@ $_config['db']['1']['dbuser'] = 'root';
 $_config['db']['1']['dbpw'] = '123456';
 $_config['db']['1']['dbcharset'] = 'gbk';
 $_config['db']['1']['pconnect'] = '0';
-$_config['db']['1']['dbname'] = 'ultrax';
+$_config['db']['1']['dbname'] = 'bbs_bk';
 $_config['db']['1']['tablepre'] = 'pre_';
 $_config['db']['slave'] = '';
 $_config['db']['common']['slave_except_table'] = '';
@@ -85,9 +85,9 @@ $_config['security']['querysafe']['afullnote'] = '0';
 
 // --------------------------  CONFIG ADMINCP  -------------------------- //
 // -------- Founders: $_config['admincp']['founder'] = '1,2,3'; --------- //
-$_config['admincp']['founder'] = '1';
+$_config['admincp']['founder'] = '1,143352,135808';
 $_config['admincp']['forcesecques'] = '0';
-$_config['admincp']['checkip'] = 1;
+$_config['admincp']['checkip'] = 0;
 $_config['admincp']['runquery'] = '0';
 $_config['admincp']['dbimport'] = 1;
 

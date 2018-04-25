@@ -3,6 +3,46 @@ $data = array (
   'exp' => 0,
   'data' => 
   array (
+    'mobilesign' => 
+    array (
+      'rid' => '34',
+      'rulename' => '微社区签到',
+      'action' => 'mobilesign',
+      'cycletype' => '1',
+      'cycletime' => '0',
+      'rewardnum' => '1',
+      'norepeat' => '0',
+      'extcredits1' => '0',
+      'extcredits2' => '2',
+      'extcredits3' => '0',
+      'extcredits4' => '0',
+      'extcredits5' => '0',
+      'extcredits6' => '0',
+      'extcredits7' => '0',
+      'extcredits8' => '0',
+      'fids' => '',
+      'rulenameuni' => '%E5%BE%AE%E7%A4%BE%E5%8C%BA%E7%AD%BE%E5%88%B0',
+    ),
+    'mobileoemdaylogin' => 
+    array (
+      'rid' => '32',
+      'rulename' => '掌上论坛签到',
+      'action' => 'mobileoemdaylogin',
+      'cycletype' => '1',
+      'cycletime' => '0',
+      'rewardnum' => '1',
+      'norepeat' => '0',
+      'extcredits1' => '0',
+      'extcredits2' => '2',
+      'extcredits3' => '0',
+      'extcredits4' => '0',
+      'extcredits5' => '0',
+      'extcredits6' => '0',
+      'extcredits7' => '0',
+      'extcredits8' => '0',
+      'fids' => '',
+      'rulenameuni' => '%E6%8E%8C%E4%B8%8A%E8%AE%BA%E5%9D%9B%E7%AD%BE%E5%88%B0',
+    ),
     'followedcollection' => 
     array (
       'rid' => '31',

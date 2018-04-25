@@ -2,7 +2,7 @@
 define('UC_DBHOST', '127.0.0.1');
 define('UC_DBUSER', 'root');
 define('UC_DBPW', '123456');
-define('UC_DBNAME', 'ultrax');
+define('UC_DBNAME', 'bbs_bk');
 define('UC_DBCHARSET', 'gbk');
 define('UC_DBTABLEPRE', 'pre_ucenter_');
 define('UC_COOKIEPATH', '/');
