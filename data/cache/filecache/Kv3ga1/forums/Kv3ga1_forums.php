@@ -671,14 +671,16 @@ $data = array (
       'type' => 'forum',
       'name' => 'µ¥ÉíÄÐÅ®',
       'fup' => '41',
-      'viewperm' => '	10	11	12	13	14	15	20	21	16	17	18	19	1	2	3	4	7	8	23	25	26	',
-      'postperm' => '	10	11	12	13	14	15	20	21	16	17	18	19	1	2	3	23	25	26	',
+      'viewperm' => '	10	11	12	13	14	15	20	21	16	17	18	19	1	2	3	4	7	8	',
+      'postperm' => '	10	11	12	13	14	15	20	21	16	17	18	19	1	2	3	',
       'orderby' => 'lastpost',
       'ascdesc' => 'DESC',
       'users' => NULL,
       'status' => '1',
       'extra' => 
       array (
+        'namecolor' => '',
+        'iconwidth' => '',
       ),
       'plugin' => NULL,
       'allowpostspecial' => '000001',

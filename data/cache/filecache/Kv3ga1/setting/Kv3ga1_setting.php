@@ -1337,7 +1337,7 @@ j/n/Y',
     ),
     'baidusitemap_life' => '1',
     'connect_login_times' => '0',
-    'connect_login_report_date' => '2017-10-19',
+    'connect_login_report_date' => '2018-04-26',
     'forumpicstyle' => 'a:3:{s:10:"thumbwidth";i:150;s:11:"thumbheight";i:160;s:8:"thumbnum";i:12;}',
     'cloud_security_stats_thread' => '2031',
     'cloud_security_stats_post' => '251',
@@ -4014,6 +4014,13 @@ j/n/Y',
         'code' => '<a href="home.php?mod=space&do=wall" style="background-image:url(http://www.guizhoubbs.cn/static/image/feed/wall_b.png) !important">留言板</a>',
         'level' => '0',
       ),
+      'portal' => 
+      array (
+        'available' => '1',
+        'navname' => '门户',
+        'code' => '<a href="portal.php" style="background-image:url(http://www.guizhoubbs.cn/static/image/feed/portal_b.png) !important">门户</a>',
+        'level' => '0',
+      ),
       'guide' => 
       array (
         'available' => '1',
@@ -4063,13 +4070,6 @@ j/n/Y',
         'code' => '<a href="group.php" style="background-image:url(http://www.guizhoubbs.cn/static/image/feed/group_b.png) !important">群组</a>',
         'level' => '0',
       ),
-      'portal' => 
-      array (
-        'available' => '0',
-        'navname' => '门户',
-        'code' => '<a href="portal.php" style="background-image:url(http://www.guizhoubbs.cn/static/image/feed/portal_b.png) !important">门户</a>',
-        'level' => '0',
-      ),
     ),
     'topnavs' => 
     array (
@@ -4102,19 +4102,19 @@ j/n/Y',
       array (
         0 => 
         array (
-          'left' => '{hegeCllS}
-{XgTjNz7e}
-{DKgbxRZE}
-{w5YppAaX}
-{DzVt94Hr}
-{MB8RAoZU}
+          'left' => '{C3tVu5ir}
+{FBB3nLl3}
+{n77UuH9e}
+{bf12Y227}
+{EZTmaTsr}
+{LujuUf9u}
 <dl class="pil cl">
-	<dt>{PArRPErt}</dt><dd>{MQ17K5Dg}</dd>
+	<dt>{qo4g59ss}</dt><dd>{fTY9oNny}</dd>
 </dl>
-{wZ2mmiaa}
-<dl class="pil cl">{MNBCJBvW}</dl>',
+{ATkcdK7O}
+<dl class="pil cl">{MA1z96Bb}</dl>',
           'top' => '<dl class="cl">
-<dt>{Fk65Zqf5}</dt><dd>{e9dLS99i}</dd>
+<dt>{Xz4un9UQ}</dt><dd>{BZ7ZIKUh}</dd>
 </dl>',
         ),
       ),
@@ -4124,70 +4124,70 @@ j/n/Y',
         array (
           'left' => 
           array (
-            '{hegeCllS}' => 
+            '{C3tVu5ir}' => 
             array (
               0 => 'numbercard',
               1 => '',
               2 => '',
               3 => '',
             ),
-            '{XgTjNz7e}' => 
+            '{FBB3nLl3}' => 
             array (
               0 => 'groupicon',
               1 => '<p>',
               2 => '</p>',
               3 => '',
             ),
-            '{DKgbxRZE}' => 
+            '{n77UuH9e}' => 
             array (
               0 => 'authortitle',
               1 => '<p><em>',
               2 => '</em></p>',
               3 => '',
             ),
-            '{w5YppAaX}' => 
+            '{bf12Y227}' => 
             array (
               0 => 'customstatus',
               1 => '<p class="xg1">',
               2 => '</p>',
               3 => '',
             ),
-            '{DzVt94Hr}' => 
+            '{EZTmaTsr}' => 
             array (
               0 => 'star',
               1 => '<p>',
               2 => '</p>',
               3 => '',
             ),
-            '{MB8RAoZU}' => 
+            '{LujuUf9u}' => 
             array (
               0 => 'upgradeprogress',
               1 => '<p>',
               2 => '</p>',
               3 => '',
             ),
-            '{PArRPErt}' => 
+            '{qo4g59ss}' => 
             array (
               0 => 'baseinfo',
               1 => '',
               2 => '',
               3 => 'credits,1',
             ),
-            '{MQ17K5Dg}' => 
+            '{fTY9oNny}' => 
             array (
               0 => 'baseinfo',
               1 => '',
               2 => '',
               3 => 'credits,0',
             ),
-            '{wZ2mmiaa}' => 
+            '{ATkcdK7O}' => 
             array (
               0 => 'medal',
               1 => '<p class="md_ctrl">',
               2 => '</p>',
               3 => '',
             ),
-            '{MNBCJBvW}' => 
+            '{MA1z96Bb}' => 
             array (
               0 => 'baseinfo',
               1 => '',
@@ -4197,14 +4197,14 @@ j/n/Y',
           ),
           'top' => 
           array (
-            '{Fk65Zqf5}' => 
+            '{Xz4un9UQ}' => 
             array (
               0 => 'baseinfo',
               1 => '',
               2 => '',
               3 => 'credits,1',
             ),
-            '{e9dLS99i}' => 
+            '{BZ7ZIKUh}' => 
             array (
               0 => 'baseinfo',
               1 => '',

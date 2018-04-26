@@ -70,6 +70,6 @@ $data = array (
     'boardlogo' => '<img src="template/kxsdnewhlx/image/logo.png" alt="¹óÖÝÂÛÌ³" border="0" />',
     'bold' => 'bold',
     'defaultextstyle' => '',
-    'verhash' => 'Cum',
+    'verhash' => 'mlX',
   ),
 );
