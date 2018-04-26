@@ -1,0 +1,97 @@
+
+.wapper_out {
+  width: 100%; }
+
+.wapper {
+  width: 1000px;
+  margin: 0px auto;
+  overflow: hidden; }
+
+.wall {
+  width: 1000px;
+  margin: 0 auto;
+  font-family: Arial !important; }
+
+
+.overvisible {
+  overflow: visible; }
+
+.level1 {
+  position: relative;
+  z-index: 1; }
+
+.level2 {
+  position: relative;
+  z-index: 2; }
+
+.level3 {
+  position: relative;
+  z-index: 3; }
+
+.level4 {
+  position: relative;
+  z-index: 4; }
+
+
+.extend_site_tool_base {
+  width: 21px;
+  height: 35px;
+  padding: 0 10px;
+  display: block;
+  cursor: pointer; }
+
+div.sitenavbg {
+  height: 36px;
+  border-bottom: 1px solid #dfdfdf;
+  background-color: #fff; }
+
+div.sitenav {
+  position: relative;
+  height: 36px;
+  z-index: 1; }
+  div.sitenav ul li {
+    float: left;
+    display: block;
+    line-height: 36px;
+    height: 36px; }
+  div.sitenav a {
+    color: #333;
+    cursor: pointer;
+    display: inline-block; }
+  div.sitenav a:hover {
+    text-decoration: underline; }
+  div.sitenav .head_ul li {
+    padding: 0 10px; }
+    div.sitenav .head_ul li a i {
+      display: inline-block;
+      width: 20px;
+      margin-right: 5px; }
+  div.sitenav .head_ul li.pl0 {
+    padding-left: 0; }
+  div.sitenav .set_index {
+    background-position: 3px 10px; }
+  div.sitenav .client {
+    background-position: -20px 10px; }
+  div.sitenav .weChat {
+    background-position: -50px 10px; }
+  div.sitenav .advertisement {
+    background-position: -80px 10px; }
+  div.sitenav .weixin_box {
+    z-index: 150; }
+    div.sitenav .weixin_box .weixin_tip {
+      display: none;
+      background-color: #fff;
+      width: 120px;
+      padding: 10px 20px;
+      border: 1px solid #C8C8C8;
+      position: absolute;
+      left: -25px;
+      top: 36px;
+      z-index: 2; }
+      div.sitenav .weixin_box .weixin_tip .weixin_img {
+        background: url(../weixin.png) no-repeat;
+        width: 120px;
+        height: 120px;
+        display: block; }
+.zlogo img {
+width:144px ; height:47px;}

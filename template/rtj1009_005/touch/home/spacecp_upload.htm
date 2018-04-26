@@ -1,0 +1,162 @@
+<!--{block backurl}-->
+<a href="home.php?mod=space&do=album&view=me" class="logo"><img src="/template/lyrs_mobile/touch/style/logoback.png" />{lang album}</a>
+<!--{/block}-->
+<!--{template common/header1}-->
+<!--{eval $nohtml['footer']='1';}-->
+<!--{if empty($_GET['op'])}-->
+<script language="javascript">
+function changealbumop(albumop){
+	if(albumop=='selectalbum'){
+		document.getElementById('uploadalbumid').style.display='';
+		document.getElementById('creatalbum').style.display='none';
+	}else{
+		document.getElementById('uploadalbumid').style.display='none';
+		document.getElementById('creatalbum').style.display='';
+	}
+}
+
+function passwordShow(friend){
+	if(friend=='4'){
+		document.getElementById('uploadpassword').style.display='';
+	}else{
+		document.getElementById('uploadpassword').style.display='none';
+	}
+}
+</script>
+<form method="post" autocomplete="off" id="albumform" action="home.php?mod=spacecp&ac=upload">
+  <div class="postarea">
+    <!--{if $albums}-->
+    <p class="bl_line">
+      <select name="albumop" id="classid" onchange="changealbumop(this.value)">
+        <option value="selectalbum">{lang add_to_existing_album}</option>
+        <option value="creatalbum">{lang create_new_album}</option>
+      </select>
+    </p>
+    <p class="bl_line" id="uploadalbumid">
+      <select name="albumid">
+      <!--{loop $albums $value}-->
+        <!--{if $value['albumid'] == $_GET['albumid']}-->
+          <option value="$value[albumid]" selected="selected">$value[albumname]</option>
+        <!--{else}-->
+          <option value="$value[albumid]">$value[albumname]</option>
+        <!--{/if}-->
+      <!--{/loop}-->
+      </select>
+    </p>
+    <!--{else}-->
+    <input type="hidden" name="albumop" value="creatalbum" />
+    <!--{/if}-->
+    <div id="creatalbum" style="display:none">
+    <p class="bl_line"><input type="text" name="albumname" id="albumname" value="{lang my_album}" placeholder="{lang album_name}"/></p>
+    <p class="bl_line ta_line">
+    <textarea name="depict" placeholder="{lang album_depict}"></textarea>
+    </p>
+    <p class="bl_line">
+      <select name="friend" id="uploadfriend" onchange="passwordShow(this.value);">
+        <option value="0">{lang friendname_0}</option>
+        <option value="1">{lang friendname_1}</option>
+        <option value="3">{lang friendname_3}</option>
+        <option value="4">{lang friendname_4}</option>
+      </select>
+    </p>
+    <p class="bl_line" id="uploadpassword" style="display:none"><input type="text" name="password" placeholder="{lang password}"/></p>
+    </div>
+    
+    <p class="upimg">
+      <a href="javascript:;"><input type="file" name="Filedata" id="filedata"/></a>
+    </p>
+    <ul id="imglist" class="post_imglist cl bl_line">
+    </ul>
+    
+    <p class="btn_post">
+    <button type="submit" name="albumsubmit_btn" id="albumsubmit_btn" value="true" class="btn_pn btn_pn_blue"><span>{lang upload_start}</span></button>
+    </p>
+  </div>
+  <input type="hidden" name="albumsubmit" id="albumsubmit" value="true" />
+  <input type="hidden" name="formhash" value="{FORMHASH}" />
+</form>
+<script type="text/javascript" src="{STATICURL}js/mobile/ajaxfileupload.js?{VERHASH}"></script>
+<script type="text/javascript" src="{STATICURL}js/mobile/buildfileupload.js?{VERHASH}"></script>
+<script type="text/javascript">
+	var imgexts = typeof imgexts == 'undefined' ? 'jpg, jpeg, gif, png' : imgexts;
+	var STATUSMSG = {
+		'-1' : '{lang uploadstatusmsgnag1}',
+		'0' : '{lang uploadstatusmsg0}',
+		'1' : '{lang uploadstatusmsg1}',
+		'2' : '{lang uploadstatusmsg2}',
+		'3' : '{lang uploadstatusmsg3}',
+		'4' : '{lang uploadstatusmsg4}',
+		'5' : '{lang uploadstatusmsg5}',
+		'6' : '{lang uploadstatusmsg6}',
+		'7' : '{lang uploadstatusmsg7}(' + imgexts + ')',
+		'8' : '{lang uploadstatusmsg8}',
+		'9' : '{lang uploadstatusmsg9}',
+		'10' : '{lang uploadstatusmsg10}',
+		'11' : '{lang uploadstatusmsg11}'
+	};
+	var form = $('#postform');
+	$(document).on('change', '#filedata', function() {
+			popup.open('<img src="' + IMGDIR + '/imageloading.gif">');
+
+			uploadsuccess = function(data) {
+				if(data == '') {
+					popup.open('{lang uploadpicfailed}', 'alert');
+				}
+				var dataarr = eval('('+data+')');
+
+
+				popup.close();
+				$('#imglist').append('<li><span picid="'+dataarr['picid']+'" class="del"><a href="javascript:;"><img src="{STATICURL}image/mobile/images/icon_del.png"></a></span><span class="p_img"><a href="javascript:;"><img style="height:54px;width:54px;" id="aimg_'+dataarr['picid']+'" title="'+dataarr['picid']+'" src="'+dataarr['bigimg']+'" /></a></span><input type="hidden" name="title['+dataarr['picid']+']" /></li>');
+
+			};
+
+			if(typeof FileReader != 'undefined' && this.files[0]) {
+				
+				$.buildfileupload({
+					uploadurl:'misc.php?mod=swfupload&action=swfupload&operation=album&type=image&inajax=yes&infloat=yes',
+					files:this.files,
+					uploadformdata:{uid:"$_G[uid]", hash:"<!--{eval echo md5(substr(md5($_G[config][security][authkey]), 8).$_G[uid])}-->"},
+					uploadinputname:'Filedata',
+					maxfilesize:"$swfconfig[max]",
+					success:uploadsuccess,
+					
+					error:function() {
+						popup.open('{lang uploadpicfailed}', 'alert');
+					}
+				});
+
+			} else {
+
+				$.ajaxfileupload({
+					url:'misc.php?mod=swfupload&action=swfupload&operation=album&type=image&inajax=yes&infloat=yes',
+					data:{uid:"$_G[uid]", hash:"<!--{eval echo md5(substr(md5($_G[config][security][authkey]), 8).$_G[uid])}-->"},
+					dataType:'text',
+					fileElementId:'filedata',
+					success:uploadsuccess,
+					error: function() {
+						popup.open('{lang uploadpicfailed}', 'alert');
+					}
+				});
+
+			}
+	});
+
+
+	$(document).on('click', '.del', function() {
+		var obj = $(this);
+		$.ajax({
+			type:'POST',
+			url:'home.php?mod=spacecp&ac=album&op=editpic&albumid=-1&subop=delete&editpicsubmit=true&inajax=yes&formhash={FORMHASH}&ids[]=' + obj.attr('picid'),
+		})
+		.success(function(s) {
+			obj.parent().remove();
+		})
+		.error(function() {
+			popup.open('{lang networkerror}', 'alert');
+		});
+		return false;
+	});
+
+</script>
+<!--{/if}-->
+<!--{template common/footer}-->

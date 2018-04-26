@@ -1,0 +1,9 @@
+<!--{eval $thread=DB::fetch_first("SELECT t.*,p.pid,p.message FROM ".DB::table('forum_thread').' t,'.DB::table('forum_post')." p WHERE t.tid='$value[id]' AND p.tid=t.tid AND p.first=1");}-->
+
+<tbody id="autolist_{$value[id]}">
+  <tr>
+    <td onclick="goto('$value[url]')">
+    <!--{template forum/threadlist}-->
+    </td>
+  </tr>
+</tbody>

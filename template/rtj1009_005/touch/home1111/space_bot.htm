@@ -1,0 +1,12 @@
+<script language="javascript">
+cheight=document.body.clientHeight;
+<!--{if $nvnum>0}-->
+var th=204;
+<!--{else}-->
+var th=164;
+<!--{/if}-->
+<!--{if $is_wechat}-->
+var th=th-45;
+<!--{/if}-->
+document.getElementById('minh').style.minHeight=cheight-th+'px';
+</script>

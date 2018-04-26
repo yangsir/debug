@@ -1,0 +1,49 @@
+<div class="home_userinfo space cl">
+  <!--{if $space['uid'] == $_G[uid]}-->
+  $spaceaction
+  <!--{else}-->
+  <!--{template home/space_user}-->
+  <!--{/if}-->
+  <img src="<!--{avatar($space[uid], middle, true)}-->" class="spaceav"/>
+  <h3>$space[username]</h3>
+  <p><span>$space[credits]</span>{lang credits}</p>
+</div>
+<!--{eval $spacenv=array();}-->
+<!--{if $space['uid'] != $_G[uid]}-->
+<!--{if empty($personalnv['banitems']['blog']) && helper_access::check_module('blog')}-->
+<!--{eval $spacenv['blog']=array('name'=>lang('space','blog'),'url'=>"home.php?mod=space&uid=$space[uid]&do=blog&view=me&from=space");}-->
+<!--{/if}-->
+<!--{if empty($personalnv['banitems']['album']) && helper_access::check_module('album')}-->
+<!--{eval $spacenv['album']=array('name'=>lang('home/template','album'),'url'=>"home.php?mod=space&uid=$space[uid]&do=album&view=me&from=space");}-->
+<!--{/if}-->
+<!--{if empty($personalnv['banitems']['follow']) && helper_access::check_module('follow')}-->
+<!--{eval $spacenv['follow']=array('name'=>lang('home/template','follow'),'url'=>"home.php?mod=follow&uid=$space[uid]&do=view");}-->
+<!--{/if}-->
+<!--{if count($spacenv)>0}-->
+<!--{eval $spacenv['thread']=array('name'=>lang('home/template','topic'),'url'=>"home.php?mod=space&uid=$space[uid]&do=thread&view=me&from=space");}-->
+<!--{/if}-->
+<!--{else}-->
+<!--{if empty($personalnv['banitems']['blog']) && helper_access::check_module('blog')}-->
+<!--{eval $spacenv['blog']=array('name'=>lang('space','blog'),'url'=>"home.php?mod=space&do=blog&view=me");}-->
+<!--{/if}-->
+<!--{if empty($personalnv['banitems']['album']) && helper_access::check_module('album')}-->
+<!--{eval $spacenv['album']=array('name'=>lang('home/template','album'),'url'=>"home.php?mod=space&do=album&view=me");}-->
+<!--{/if}-->
+<!--{if empty($personalnv['banitems']['follow']) && helper_access::check_module('follow')}-->
+<!--{eval $spacenv['follow']=array('name'=>lang('home/template','follow'),'url'=>"home.php?mod=follow&view=follow");}-->
+<!--{/if}-->
+<!--{if count($spacenv)>0}-->
+<!--{eval $spacenv['thread']=array('name'=>lang('home/template','topic'),'url'=>"home.php?mod=space&do=thread&view=me");}-->
+<!--{/if}-->
+<!--{/if}-->
+<!--{eval $nvnum=count($spacenv)}-->
+<!--{if $nvnum>0}-->
+<div id="topnv">
+  <ul class="list_{$nvnum} cl">
+    <!--{loop $spacenv $key $value}-->
+    <li {if $_GET['do']==$key || $_GET['mod']==$key}class="a"{/if}><a href="$value[url]">$value[name]</a></li>
+    <!--{/loop}-->
+  </ul>
+</div>
+<script src="{IMGDIR}/fixed.js"></script>
+<!--{/if}-->

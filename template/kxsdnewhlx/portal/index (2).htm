@@ -1,0 +1,353 @@
+<!--{subtemplate common/header}-->
+<style id="diy_style" type="text/css"></style>
+<link href="$_G['style']['styleimgdir']/css/por1.css" rel="stylesheet" />
+<link href="$_G['style']['styleimgdir']/css/por2.css" rel="stylesheet" />
+<!-- 广告位顶部通栏开始 -->
+<!--[diy=1]--><div id="1" class="area"></div><!--[/diy]-->
+<!-- 广告位顶部通栏结束 -->
+<div class=" wapper">
+    <div class="top_l">
+        <div id="slider_wapper">
+<!--[diy=kdiya]--><div id="kdiya" class="area"></div><!--[/diy]-->
+        </div>
+ <div class="clear"></div>
+        <ul class="frame_hd  clearfix" id="ul_top">
+<!--[diy=kdh]--><div id="kdh" class="area"></div><!--[/diy]-->
+        </ul>
+        <div class="clear"></div>
+        <div class="f_box">
+<!--[diy=kddu]--><div id="kddu" class="area"></div><!--[/diy]-->
+        </div>
+        <div class="blank10"></div>
+<!--[diy=ka1]--><div id="ka1" class="area"></div><!--[/diy]-->
+    </div>
+    <div class="top_m">
+<!--[diy=khot]--><div id="khot" class="area"></div><!--[/diy]-->
+        <div class="blank10"></div>
+<!--[diy=kcs]--><div id="kcs" class="area"></div><!--[/diy]-->
+    </div>
+    <div class="top_r">
+        <div class="login_box" id="index_login_box">
+          <!--{if !$_G['uid']}-->
+     <div class="unlogin">
+                <a href="member.php?mod=logging&amp;action=login" onClick="showWindow('login', this.href)" class="fs bigfs log fs16 tac mr10 btns btn_login">登录</a><a href="member.php?mod={$_G[setting][regname]}" target="_blank" class="fs bigfs fs16 regist tac btns">注册登录</a>
+                <div class="clear"></div>
+                <div class="gc9">用其他账号登录：<a href="plugin.php?id=wechat:login" class="icon_index weibo mr5">weibo</a><a href="$_G[connect][login_url]&statfrom=login_simple" class="icon_index qq">qq</a></div>
+            </div>
+      	<!--{else}-->   
+{eval	
+$posts = getuserprofile('posts');
+}
+<dl class="log_in">   
+ <dt><a href="home.php?mod=space&uid=$_G[uid]" target="_blank"><!--{avatar($_G[uid],middle)}--> </a></dt>
+ <dd><a class="gc3 mr5 fs14" href="home.php?mod=space&uid=$_G[uid]" title="{echo cutstr($_G[member][username],10)}">{echo cutstr($_G[member][username],10)} </a>       
+  <a class="gc6 fs12" href="member.php?mod=logging&action=logout&formhash={FORMHASH}">[退出]</a>        
+  <p class="mt5">$_G[group][grouptitle]</p>
+          <p><i class="icon_index gold mr5"></i>金币：<em><a  class="c_org"target="_blank" href="home.php?mod=spacecp&ac=credit"><!--{echo dnumber($_G['member']['extcredits2'])}--></a></em></p>
+		  <p><i class="icon_index weiwang mr5"></i>积分：<em class="c_org">$_G[member][credits]</em></p></dd></dl>			
+		  		<!--{/if}-->	
+   </div>
+        <div class="blank5"></div>
+        <div class="mb10">
+            <div class="ad_loading"><!--[diy=ka2]--><div id="ka2" class="area"></div><!--[/diy]-->
+</div>
+        </div>
+<!--[diy=kxhdkt]--><div id="kxhdkt" class="area"></div><!--[/diy]-->
+        <div class="pd_list fs14 clearfix">
+<!--[diy=kmm]--><div id="kmm" class="area"></div><!--[/diy]-->
+        </div>
+        <div class="r_ad mt10">
+            <!-- 广告位：全站首页_活动看台小banner -->
+                <div class="ad_loading"><!--[diy=ka3]--><div id="ka3" class="area"></div><!--[/diy]--></div>
+        </div>
+    </div>
+    <div class="blank10"></div>
+</div>
+<div class="wapper">
+<!--[diy=ka4]--><div id="ka4" class="area"></div><!--[/diy]-->
+    <div class="blank5"></div>
+</div>
+<div class="wapper">
+    <div class="channel_box mr20">
+        <div class="stitle">
+            <div class="t_left b_food"><span class="fs24 bigfs"><a href="/forum-77-1.html" target="_blank" class="c_org">美食</a></span></div>
+            <div class="t_right tar gc9">吃货<span class="c_qp ml5 mr5">探店</span>应有尽有<a href="/forum-77-1.html" target="_blank" class="baoming ml10 r3 tac">找美食</a></div>
+        </div>
+        <div class="cont_l" style="height:300px">
+	<!--[diy=mst]--><div id="mst" class="area"></div><!--[/diy]-->
+            
+        </div>
+        <div class="cont_r">
+	<!--[diy=msw]--><div id="msw" class="area"></div><!--[/diy]-->
+        </div>
+        <div class="blank10"></div>
+        <div class="hots_list clearfix">
+	<!--[diy=msrm]--><div id="msrm" class="area"></div><!--[/diy]-->
+        </div>
+    </div>
+    <div class="channel_box">
+        <div class="stitle">
+            <div class="t_left b_travel"><span class="fs24 bigfs"><a href="/forum-39-1.html" target="_blank" class="c_blue">旅游</a></span></div>
+            <div class="t_right tar gc9">出行<span class="c_qp ml5 mr5">景点</span>旅游全攻略<a href="/forum-39-1.html" target="_blank" class="baoming ml10 r3 tac">找目的地</a></div>
+        </div>
+        <div class="cont_l">
+            <div class="img_box">
+	<!--[diy=lyt]--><div id="lyt" class="area"></div><!--[/diy]-->
+            </div>
+        </div>
+        <div class="cont_r">
+            <ul class="fs14 mes_list">
+	<!--[diy=lyw]--><div id="lyw" class="area"></div><!--[/diy]-->
+            </ul>
+        </div>
+        <div class="blank10"></div>
+        <div class="travel_box fs14">
+	<!--[diy=lyxt]--><div id="lyxt" class="area"></div><!--[/diy]-->
+        </div>
+	<!--[diy=lyrm]--><div id="lyrm" class="area"></div><!--[/diy]-->
+    </div>
+    <div class="blank10"></div>
+    <div class="wapper">
+<!--[diy=2]--><div id="2" class="area"></div><!--[/diy]-->
+    </div>
+    <div class="channel_box mr20">
+        <div class="stitle">
+            <div class="t_left b_house"><span class="fs24 bigfs"><a href=/"forum-49-1.html" target="_blank" class="c_house">家居</a></span></div>
+            <div class="t_right tar gc9">组团<span class="c_qp ml5 mr5">装修</span>福利多<a href="/forum-49-1.html" target="_blank" class="baoming ml10 r3 tac">我要分享</a></div>
+        </div>
+        <div class="cont_l">
+            <div class="img_box">
+	<!--[diy=fct]--><div id="fct" class="area"></div><!--[/diy]-->
+            </div>
+        </div>
+        <div class="cont_r">
+            <ul class="fs14 mes_list">
+	<!--[diy=fcw]--><div id="fcw" class="area"></div><!--[/diy]-->
+            </ul>
+        </div>
+        <div class="blank10"></div>
+        <div class="under_box fs14">
+<!--[diy=fcxw]--><div id="fcxw" class="area"></div><!--[/diy]-->
+        </div>
+<!--[diy=fcrm]--><div id="fcrm" class="area"></div><!--[/diy]-->
+    </div>
+    <div class="channel_box">
+        <div class="stitle">
+            <div class="t_left b_fm"><span class="fs24 bigfs"><a href="/laran/" target="_blank" class="c_fm">蜡染</a></span></div>
+            <div class="t_right tar gc9">民族<span class="c_qp ml5 mr5">文化</span>历史传承<a href="/laran/" target="_blank" class="baoming ml10 r3 tac">查看更多</a></div>
+        </div>
+        <div class="cont_l">
+            <div class="img_box">
+	<!--[diy=jjt]--><div id="jjt" class="area"></div><!--[/diy]-->
+            </div>
+        </div>
+        <div class="cont_r">
+            <ul class="fs14 mes_list">
+	<!--[diy=jjw]--><div id="jjw" class="area"></div><!--[/diy]-->
+            </ul>
+        </div>
+        <div class="blank10"></div>
+        <div class="under_box fs14">
+<!--[diy=jjxw]--><div id="jjxw" class="area"></div><!--[/diy]-->
+        </div>
+<!--[diy=jjrm]--><div id="jjrm" class="area"></div><!--[/diy]-->
+    </div>
+    <div class="blank15"></div>
+    <!--广告 开始-->
+    <div class="wapper">
+<!--[diy=3]--><div id="3" class="area"></div><!--[/diy]-->
+    </div>
+    <div class="channel_box mr20">
+        <div class="stitle">
+            <div class="t_left b_car"><span class="fs24 bigfs"><a href="/forum-74-1.html" target="_blank" class="c_car">汽车</a></span></div>
+            <div class="t_right tar gc9">看车<span class="c_qp ml5 mr5">买车</span>车友交流<a href="/forum-74-1.html" target="_blank" class="baoming ml10 r3 tac">我要分享</a></div>
+        </div>
+        <div class="cont_l">
+            <div class="img_box">
+	<!--[diy=qct]--><div id="qct" class="area"></div><!--[/diy]-->
+            </div>
+        </div>
+        <div class="cont_r">
+            <ul class="fs14 mes_list">
+	<!--[diy=qcw]--><div id="qcw" class="area"></div><!--[/diy]-->
+            </ul>
+        </div>
+        <div class="blank10"></div>
+        <div class="under_box fs14">
+<!--[diy=qcxw]--><div id="qcxw" class="area"></div><!--[/diy]-->
+        </div>
+<!--[diy=qcrm]--><div id="qcrm" class="area"></div><!--[/diy]-->
+    </div>
+    <div class="channel_box">
+        <div class="stitle">
+            <div class="t_left b_marry"><span class="fs24 bigfs"><a href="http://www.guizhoubbs.cn/forum.php" target="_blank" class="c_pink">情感</a></span></div>
+            <div class="t_right tar gc9">结婚<span class="c_qp ml5 mr5">相亲</span>加入情感俱乐部<a href="/forum-74-1.html" target="_blank" class="baoming ml10 r3 tac">我要分享</a></div>
+        </div>
+        <div class="cont_l">
+            <div class="img_box">
+	<!--[diy=hjt]--><div id="hjt" class="area"></div><!--[/diy]-->
+            </div>
+        </div>
+        <div class="cont_r">
+            <ul class="fs14 mes_list">
+	<!--[diy=hjw]--><div id="hjw" class="area"></div><!--[/diy]-->
+            </ul>
+        </div>
+        <div class="blank10"></div>
+        <div class="under_box fs14">
+<!--[diy=jhzs]--><div id="jhzs" class="area"></div><!--[/diy]-->
+        </div>
+<!--[diy=jhrm]--><div id="jhrm" class="area"></div><!--[/diy]-->
+    </div>
+    <div class="blank20"></div>
+       <!--广告 开始-->
+    <div class="wapper">
+<!--[diy=4]--><div id="4" class="area"></div><!--[/diy]-->
+    </div>
+ <div class="fashion_box">
+        <div class="title"><span class="icon_index">时尚大片</span></div>
+        <div class="f_left">
+<!--[diy=kssdpl]--><div id="kssdpl" class="area"></div><!--[/diy]-->
+        </div>
+        <div class="f_mid">
+<!--[diy=kssdpm]--><div id="kssdpm" class="area"></div><!--[/diy]-->
+        </div>
+        <div class="f_right">
+            <ul class="clearfix">
+<!--[diy=kssdpr]--><div id="kssdpr" class="area"></div><!--[/diy]-->
+            </ul>
+        </div>
+    </div>
+    <div class="blank20"></div>
+
+</div>
+<div class="wapper clearfix">
+    <div class="type_box mr17">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index baby">孕妈亲子</span></div>
+<!--[diy=hy1]--><div id="hy1" class="area"></div><!--[/diy]-->
+        </div>
+    </div>
+    <div class="type_box mr17">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index shop">时尚购物</span></div>
+<!--[diy=hy2]--><div id="hy2" class="area"></div><!--[/diy]-->
+
+        </div>
+    </div>
+    <div class="type_box">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index friend">情感交友</span></div>
+  <!--[diy=hy3]--><div id="hy3" class="area"></div><!--[/diy]-->
+
+        </div>
+    </div>
+    <div class="type_box mr17">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index pet">宠物花鸟</span></div>
+        <!--[diy=hy4]--><div id="hy4" class="area"></div><!--[/diy]-->
+
+        </div>
+    </div>
+    <div class="type_box mr17">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index money">关注留守儿童</span></div>
+         <!--[diy=hy5]--><div id="hy5" class="area"></div><!--[/diy]-->
+
+        </div>
+    </div>
+    <div class="type_box">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index movie">影视娱乐</span></div>
+       <!--[diy=hy6]--><div id="hy6" class="area"></div><!--[/diy]-->
+
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="wapper">
+<!--[diy=krj]--><div id="krj" class="area"></div><!--[/diy]-->
+</div>
+<div class="wapper">
+    <div class=" life_news clearfix">
+        <div class="text_title bigfs mb10">生活信息平台</div>
+        <div class="life_box zufang_t mr15">
+
+<!--[diy=kf1]--><div id="kf1" class="area"></div><!--[/diy]-->
+        </div>
+        <div class="life_box ershou_t mr15">
+<!--[diy=kf2]--><div id="kf2" class="area"></div><!--[/diy]-->
+        </div>
+        <div class="life_box zhaopin_t mr15">
+<!--[diy=kf3]--><div id="kf3" class="area"></div><!--[/diy]-->
+        </div>
+        <div class="life_box tiaozao_t">
+<!--[diy=kf4]--><div id="kf4" class="area"></div><!--[/diy]-->
+        </div>
+    </div>
+</div>
+<div class="blank20"></div>
+<div class="wapper">
+    <div class="bzba">
+<!--[diy=diyfriend]--><div id="diyfriend" class="area"></div><!--[/diy]-->
+    </div>
+
+</div>
+<div class="blank20"></div>
+<div class="wapper">
+    <div class="sitemap clearfix">
+	  <!--{eval $temp = $dpost = array();$on=0;$query = DB::query("SELECT fid,fup,type,name,todayposts,domain FROM ".DB::table('forum_forum')." WHERE status='1' ORDER BY displayorder;");while($data = DB::fetch($query)) $temp[]=$data;}-->
+				  <!--{loop $temp $bbs_group}-->
+				  <!--{if $bbs_group['type']=="group"}-->
+				  <!--{eval $on++;}-->
+                  <div class="sitemap-con">
+						  <!--{eval $forumurl = !empty($bbs_group['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$bbs_group['domain'].'.'.$_G['setting']['domain']['root']['forum'] : 'forum.php?gid='.$bbs_group['fid'];}-->
+						  <strong class="bigfs fs18"><a href="{$forumurl}" target="_blank">{$bbs_group['name']}</a></strong>
+						  <!--{loop $temp $bbs_forum}-->
+						  <!--{if $bbs_forum['fup']==$bbs_group['fid'] and $bbs_forum['type']=="forum"}-->
+						  <!--{eval $forumurl = !empty($bbs_forum['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$bbs_forum['domain'].'.'.$_G['setting']['domain']['root']['forum'] : 'forum.php?mod=forumdisplay&fid='.$bbs_forum['fid'];}-->
+						  <a href="{$forumurl}" target="_blank">{$bbs_forum['name']}</a>
+						  <!--{/if}-->
+						  <!--{/loop}-->
+					</div>
+				   <!--{/if}-->
+				  <!--{/loop}-->
+        <div class="clear"></div>
+    </div>
+  <div class="blank15"></div>
+    <div class="partner">
+        <dl>
+            <dt>友情链接：</dt>
+            <dd>
+  <!--[diy=yqlj]--><div id="yqlj" class="area"></div><!--[/diy]-->
+           </dd>
+        </dl>
+        <div class="clear"></div>
+    </div>
+    <div class="blank15"></div>
+	<script src="$_G['style']['styleimgdir']/js/portal.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQ(document).ready(function(){
+		jQ("#slider").hlxSlider();
+		jQ("#slider2").hlxSlider({
+			numericId:'controlm',
+			titleshow:'controlsdesc2'
+		});
+	})
+</script>
+<script src="$_G['style']['styleimgdir']/js/scroll.js" type="text/javascript"></script>
+<script type="text/javascript">
+	(function($){$(document).ready(function(){
+		$("#index_scroll").Scroll({line:2,speed:1000,timer:7000,up:"down_arrow"});
+	});
+	})(jQuery);	</script>
+<script type="text/javascript">
+	(function($){$(document).ready(function(){
+	$(".hots_list li").hover(function(){
+        $(this).addClass("hover")              
+     },function(){
+		$(this).removeClass("hover")                            
+	})
+	    
+})	})(jQuery);	</script>
+<!--{subtemplate common/footer}-->

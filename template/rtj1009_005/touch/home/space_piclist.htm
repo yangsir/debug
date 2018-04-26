@@ -1,0 +1,28 @@
+<div class="pr">
+
+<!--{eval $realpages = @ceil(($count)/$perpage);}-->
+<!--{eval $maxpage = ($realpages > 1000) ? 1000 : $realpages;}-->
+<!--{eval $nextpage = ($page + 1) > $maxpage ? 1 : ($page + 1);}-->
+<!--{eval $_G['page_next']=$nextpage }-->
+
+
+<div id="waterfallist">
+  <div id="forumnew" style="display:none"></div>
+  <ul id="waterfall" class="waterfall cl">
+    <!--{loop $list $key $value}-->
+    <li>
+      <div class="item">
+        <div class="info">
+          <a href="home.php?mod=space&uid=$value[uid]&do=$do&picid=$value[picid]"><!--{if $value[pic]}--><img src="$value[pic]" alt="" /><!--{/if}--></a>
+        </div>
+      </div>
+    </li>
+    <!--{/loop}-->
+  </ul>
+  <div id="tmppic" style="display: none;"></div>
+  <!--{template common/water}-->
+</div>
+</div>
+<!--{if $multi}-->
+<div id="pgbtn" class="pgbtn"><a href="{$urlstr}&page=$nextpage" hidefocus="true">$comeing_weixin[2] &raquo;</a></div>
+<!--{/if}-->

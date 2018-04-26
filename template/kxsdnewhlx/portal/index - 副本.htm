@@ -1,0 +1,355 @@
+<!--{subtemplate common/header}-->
+<style id="diy_style" type="text/css"></style>
+<link href="$_G['style']['styleimgdir']/css/por1.css" rel="stylesheet" />
+<link href="$_G['style']['styleimgdir']/css/por2.css" rel="stylesheet" />
+<!--{block/1266}-->
+<div class=" wapper">
+    <div class="top_l">
+        <div id="slider_wapper">
+            <!--{block/1247}-->
+        </div>
+ <div class="clear"></div>
+        <ul class="frame_hd  clearfix" id="ul_top">
+            <!--{block/1248}-->
+        </ul>
+        <div class="clear"></div>
+        <div class="f_box">
+            <!--{block/1249}-->
+        </div>
+        <div class="blank10"></div>
+        <!--{block/1250}-->
+    </div>
+    <div class="top_m">
+        <!--{block/1251}-->
+        <div class="blank10"></div>
+        <!--{block/1252}-->
+        <!--{block/1253}-->
+        <!--{block/1254}-->
+        <!--{block/1255}-->
+        <!--{block/1256}-->
+    </div>
+    <div class="top_r">
+        <div class="login_box" id="index_login_box">
+          <!--{if !$_G['uid']}-->
+     <div class="unlogin">
+                <a href="member.php?mod=logging&amp;action=login" onClick="showWindow('login', this.href)" class="fs bigfs log fs16 tac mr10 btns btn_login">登陆</a><a href="member.php?mod={$_G[setting][regname]}" target="_blank" class="fs bigfs fs16 regist tac btns">?????</a>
+                <div class="clear"></div>
+                <div class="gc9">微博<a href="plugin.php?id=wechat:login" class="icon_index weibo mr5">weibo</a><a href="$_G[connect][login_url]&statfrom=login_simple" class="icon_index qq">qq</a></div>
+            </div>
+      	<!--{else}-->   
+{eval	
+$posts = getuserprofile('posts');
+}
+<dl class="log_in">   
+ <dt><a href="home.php?mod=space&uid=$_G[uid]" target="_blank"><!--{avatar($_G[uid],middle)}--> </a></dt>
+ <dd><a class="gc3 mr5 fs14" href="home.php?mod=space&uid=$_G[uid]" title="{echo cutstr($_G[member][username],10)}">{echo cutstr($_G[member][username],10)} </a>       
+  <a class="gc6 fs12" href="member.php?mod=logging&action=logout&formhash={FORMHASH}">[退出]</a>
+  <p class="mt5">$_G[group][grouptitle]</p>
+          <p><i class="icon_index gold mr5"></i>金币<em><a  class="c_org"target="_blank" href="home.php?mod=spacecp&ac=credit"><!--{echo dnumber($_G['member']['extcredits2'])}--></a></em></p>
+		  <p><i class="icon_index weiwang mr5"></i>积分<em class="c_org">$_G[member][credits]</em></p></dd></dl>
+		  		<!--{/if}-->	
+   </div>
+        <div class="blank5"></div>
+        <div class="mb10">
+            <div class="ad_loading"><!--[diy=ka2]--><div class="area" id="ka2"></div><!--[/diy]-->
+</div>
+        </div>
+<!--[diy=kxhdkt]--><div class="area" id="kxhdkt"></div><!--[/diy]-->
+        <div class="pd_list fs14 clearfix">
+<!--[diy=kmm]--><div class="area" id="kmm"></div><!--[/diy]-->
+        </div>
+        <div class="r_ad mt10">
+            <!-- ???λ???????_?????Сbanner -->
+                <div class="ad_loading"><!--[diy=ka3]--><div class="area" id="ka3"></div><!--[/diy]--></div>
+        </div>
+    </div>
+    <div class="blank10"></div>
+</div>
+<div class="wapper">
+<!--[diy=ka4]--><div class="area" id="ka4"></div><!--[/diy]-->
+    <div class="blank5"></div>
+</div>
+<div class="wapper">
+    <div class="channel_box mr20">
+        <div class="stitle">
+            <div class="t_left b_food"><span class="fs24 bigfs"><a href="/forum-77-1.html" target="_blank" class="c_org">???</a></span></div>
+            <div class="t_right tar gc9">???<span class="c_qp ml5 mr5">???</span>??о???<a href="/forum-77-1.html" target="_blank" class="baoming ml10 r3 tac">?????</a></div>
+        </div>
+        <div class="cont_l" style="height:300px">
+	<!--[diy=mst]--><div class="area" id="mst"></div><!--[/diy]-->
+            
+        </div>
+        <div class="cont_r">
+	<!--[diy=msw]--><div class="area" id="msw"></div><!--[/diy]-->
+        </div>
+        <div class="blank10"></div>
+        <div class="hots_list clearfix">
+	<!--[diy=msrm]--><div class="area" id="msrm"></div><!--[/diy]-->
+        </div>
+    </div>
+    <div class="channel_box">
+        <div class="stitle">
+            <div class="t_left b_travel"><span class="fs24 bigfs"><a href="/forum-39-1.html" target="_blank" class="c_blue">????</a></span></div>
+            <div class="t_right tar gc9">????<span class="c_qp ml5 mr5">????</span>?????????<a href="/forum-39-1.html" target="_blank" class="baoming ml10 r3 tac">??????</a></div>
+        </div>
+        <div class="cont_l">
+            <div class="img_box">
+	<!--[diy=lyt]--><div class="area" id="lyt"></div><!--[/diy]-->
+            </div>
+        </div>
+        <div class="cont_r">
+            <ul class="fs14 mes_list">
+	<!--[diy=lyw]--><div class="area" id="lyw"></div><!--[/diy]-->
+            </ul>
+        </div>
+        <div class="blank10"></div>
+        <div class="travel_box fs14">
+	<!--[diy=lyxt]--><div class="area" id="lyxt"></div><!--[/diy]-->
+        </div>
+	<!--[diy=lyrm]--><div class="area" id="lyrm"></div><!--[/diy]-->
+    </div>
+    <div class="blank10"></div>
+    <div class="wapper">
+<!--[diy=2]--><div class="area" id="2"></div><!--[/diy]-->
+    </div>
+    <div class="channel_box mr20">
+        <div class="stitle">
+            <div class="t_left b_house"><span class="fs24 bigfs"><a href=/"forum-49-1.html" target="_blank" class="c_house">???</a></span></div>
+            <div class="t_right tar gc9">????<span class="c_qp ml5 mr5">???</span>??????<a href="/forum-49-1.html" target="_blank" class="baoming ml10 r3 tac">???????</a></div>
+        </div>
+        <div class="cont_l">
+            <div class="img_box">
+	<!--[diy=fct]--><div class="area" id="fct"></div><!--[/diy]-->
+            </div>
+        </div>
+        <div class="cont_r">
+            <ul class="fs14 mes_list">
+	<!--[diy=fcw]--><div class="area" id="fcw"></div><!--[/diy]-->
+            </ul>
+        </div>
+        <div class="blank10"></div>
+        <div class="under_box fs14">
+<!--[diy=fcxw]--><div class="area" id="fcxw"></div><!--[/diy]-->
+        </div>
+<!--[diy=fcrm]--><div class="area" id="fcrm"></div><!--[/diy]-->
+    </div>
+    <div class="channel_box">
+        <div class="stitle">
+            <div class="t_left b_fm"><span class="fs24 bigfs"><a href="/laran/" target="_blank" class="c_fm">???</a></span></div>
+            <div class="t_right tar gc9">????<span class="c_qp ml5 mr5">???</span>???????<a href="/laran/" target="_blank" class="baoming ml10 r3 tac">??????</a></div>
+        </div>
+        <div class="cont_l">
+            <div class="img_box">
+	<!--[diy=jjt]--><div class="area" id="jjt"></div><!--[/diy]-->
+            </div>
+        </div>
+        <div class="cont_r">
+            <ul class="fs14 mes_list">
+	<!--[diy=jjw]--><div class="area" id="jjw"></div><!--[/diy]-->
+            </ul>
+        </div>
+        <div class="blank10"></div>
+        <div class="under_box fs14">
+<!--[diy=jjxw]--><div class="area" id="jjxw"></div><!--[/diy]-->
+        </div>
+<!--[diy=jjrm]--><div class="area" id="jjrm"></div><!--[/diy]-->
+    </div>
+    <div class="blank15"></div>
+    <!--??? ???-->
+    <div class="wapper">
+<!--[diy=3]--><div class="area" id="3"></div><!--[/diy]-->
+    </div>
+    <div class="channel_box mr20">
+        <div class="stitle">
+            <div class="t_left b_car"><span class="fs24 bigfs"><a href="/forum-74-1.html" target="_blank" class="c_car">????</a></span></div>
+            <div class="t_right tar gc9">????<span class="c_qp ml5 mr5">??</span>???????<a href="/forum-74-1.html" target="_blank" class="baoming ml10 r3 tac">???????</a></div>
+        </div>
+        <div class="cont_l">
+            <div class="img_box">
+	<!--[diy=qct]--><div class="area" id="qct"></div><!--[/diy]-->
+            </div>
+        </div>
+        <div class="cont_r">
+            <ul class="fs14 mes_list">
+	<!--[diy=qcw]--><div class="area" id="qcw"></div><!--[/diy]-->
+            </ul>
+        </div>
+        <div class="blank10"></div>
+        <div class="under_box fs14">
+<!--[diy=qcxw]--><div class="area" id="qcxw"></div><!--[/diy]-->
+        </div>
+<!--[diy=qcrm]--><div class="area" id="qcrm"></div><!--[/diy]-->
+    </div>
+    <div class="channel_box">
+        <div class="stitle">
+            <div class="t_left b_marry"><span class="fs24 bigfs"><a href="http://www.guizhoubbs.cn/forum.php" target="_blank" class="c_pink">???</a></span></div>
+            <div class="t_right tar gc9">???<span class="c_qp ml5 mr5">????</span>??????о????<a href="/forum-74-1.html" target="_blank" class="baoming ml10 r3 tac">???????</a></div>
+        </div>
+        <div class="cont_l">
+            <div class="img_box">
+	<!--[diy=hjt]--><div class="area" id="hjt"></div><!--[/diy]-->
+            </div>
+        </div>
+        <div class="cont_r">
+            <ul class="fs14 mes_list">
+	<!--[diy=hjw]--><div class="area" id="hjw"></div><!--[/diy]-->
+            </ul>
+        </div>
+        <div class="blank10"></div>
+        <div class="under_box fs14">
+<!--[diy=jhzs]--><div class="area" id="jhzs"></div><!--[/diy]-->
+        </div>
+<!--[diy=jhrm]--><div class="area" id="jhrm"></div><!--[/diy]-->
+    </div>
+    <div class="blank20"></div>
+       <!--??? ???-->
+    <div class="wapper">
+<!--[diy=4]--><div class="area" id="4"></div><!--[/diy]-->
+    </div>
+ <div class="fashion_box">
+        <div class="title"><span class="icon_index">??д??</span></div>
+        <div class="f_left">
+<!--[diy=kssdpl]--><div class="area" id="kssdpl"></div><!--[/diy]-->
+        </div>
+        <div class="f_mid">
+<!--[diy=kssdpm]--><div class="area" id="kssdpm"></div><!--[/diy]-->
+        </div>
+        <div class="f_right">
+            <ul class="clearfix">
+<!--[diy=kssdpr]--><div class="area" id="kssdpr"></div><!--[/diy]-->
+            </ul>
+        </div>
+    </div>
+    <div class="blank20"></div>
+
+</div>
+<div class="wapper clearfix">
+    <div class="type_box mr17">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index baby">????????</span></div>
+<!--[diy=hy1]--><div class="area" id="hy1"></div><!--[/diy]-->
+        </div>
+    </div>
+    <div class="type_box mr17">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index shop">??й???</span></div>
+<!--[diy=hy2]--><div class="area" id="hy2"></div><!--[/diy]-->
+
+        </div>
+    </div>
+    <div class="type_box">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index friend">??н???</span></div>
+  <!--[diy=hy3]--><div class="area" id="hy3"></div><!--[/diy]-->
+
+        </div>
+    </div>
+    <div class="type_box mr17">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index pet">??????</span></div>
+        <!--[diy=hy4]--><div class="area" id="hy4"></div><!--[/diy]-->
+
+        </div>
+    </div>
+    <div class="type_box mr17">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index money">?????????</span></div>
+         <!--[diy=hy5]--><div class="area" id="hy5"></div><!--[/diy]-->
+
+        </div>
+    </div>
+    <div class="type_box">
+        <div class="s_box">
+            <div class="s_title"><span class="icon_index movie">???????</span></div>
+       <!--[diy=hy6]--><div class="area" id="hy6"></div><!--[/diy]-->
+
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="wapper">
+<!--[diy=krj]--><div class="area" id="krj"></div><!--[/diy]-->
+</div>
+<div class="wapper">
+    <div class=" life_news clearfix">
+        <div class="text_title bigfs mb10">?????????</div>
+        <div class="life_box zufang_t mr15">
+
+<!--[diy=kf1]--><div class="area" id="kf1"></div><!--[/diy]-->
+        </div>
+        <div class="life_box ershou_t mr15">
+<!--[diy=kf2]--><div class="area" id="kf2"></div><!--[/diy]-->
+        </div>
+        <div class="life_box zhaopin_t mr15">
+<!--[diy=kf3]--><div class="area" id="kf3"></div><!--[/diy]-->
+        </div>
+        <div class="life_box tiaozao_t">
+<!--[diy=kf4]--><div class="area" id="kf4"></div><!--[/diy]-->
+        </div>
+    </div>
+</div>
+<div class="blank20"></div>
+<div class="wapper">
+    <div class="bzba">
+<!--[diy=diyfriend]--><div class="area" id="diyfriend"></div><!--[/diy]-->
+    </div>
+
+</div>
+<div class="blank20"></div>
+<div class="wapper">
+    <div class="sitemap clearfix">
+	  <!--{eval $temp = $dpost = array();$on=0;$query = DB::query("SELECT fid,fup,type,name,todayposts,domain FROM ".DB::table('forum_forum')." WHERE status='1' ORDER BY displayorder;");while($data = DB::fetch($query)) $temp[]=$data;}-->
+				  <!--{loop $temp $bbs_group}-->
+				  <!--{if $bbs_group['type']=="group"}-->
+				  <!--{eval $on++;}-->
+                  <div class="sitemap-con">
+						  <!--{eval $forumurl = !empty($bbs_group['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$bbs_group['domain'].'.'.$_G['setting']['domain']['root']['forum'] : 'forum.php?gid='.$bbs_group['fid'];}-->
+						  <strong class="bigfs fs18"><a href="{$forumurl}" target="_blank">{$bbs_group['name']}</a></strong>
+						  <!--{loop $temp $bbs_forum}-->
+						  <!--{if $bbs_forum['fup']==$bbs_group['fid'] and $bbs_forum['type']=="forum"}-->
+						  <!--{eval $forumurl = !empty($bbs_forum['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$bbs_forum['domain'].'.'.$_G['setting']['domain']['root']['forum'] : 'forum.php?mod=forumdisplay&fid='.$bbs_forum['fid'];}-->
+						  <a href="{$forumurl}" target="_blank">{$bbs_forum['name']}</a>
+						  <!--{/if}-->
+						  <!--{/loop}-->
+					</div>
+				   <!--{/if}-->
+				  <!--{/loop}-->
+        <div class="clear"></div>
+    </div>
+  <div class="blank15"></div>
+    <div class="partner">
+        <dl>
+            <dt>?????????</dt>
+            <dd>
+  <!--[diy=yqlj]--><div class="area" id="yqlj"></div><!--[/diy]-->
+           </dd>
+        </dl>
+        <div class="clear"></div>
+    </div>
+    <div class="blank15"></div>
+	<script src="$_G['style']['styleimgdir']/js/portal.js" type="text/javascript"></script>
+<script type="text/javascript">
+jQ(document).ready(function(){
+		jQ("#slider").hlxSlider();
+		jQ("#slider2").hlxSlider({
+			numericId:'controlm',
+			titleshow:'controlsdesc2'
+		});
+	})
+</script>
+<script src="$_G['style']['styleimgdir']/js/scroll.js" type="text/javascript"></script>
+<script type="text/javascript">
+	(function($){$(document).ready(function(){
+		$("#index_scroll").Scroll({line:2,speed:1000,timer:7000,up:"down_arrow"});
+	});
+	})(jQuery);	</script>
+<script type="text/javascript">
+	(function($){$(document).ready(function(){
+	$(".hots_list li").hover(function(){
+        $(this).addClass("hover")              
+     },function(){
+		$(this).removeClass("hover")                            
+	})
+	    
+})	})(jQuery);	</script>
+<!--{subtemplate common/footer}-->

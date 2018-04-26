@@ -1,0 +1,63 @@
+<!--{block backurl}-->
+<a href="javascript:history.go(-1);" class="logo"><img src="/template/lyrs_mobile/touch/style/logoback.png" />{lang back}</a>
+<!--{/block}-->
+<!--{template common/header1}-->
+<!--{eval $nohtml['footer']='1';}-->
+
+<!--{if $_GET['op'] == 'edit'}-->
+
+<form id="editcommentform_{$cid}" name="editcommentform_{$cid}" method="post" autocomplete="off" action="home.php?mod=spacecp&ac=comment&op=edit&cid=$cid{if $_GET[modcommentkey]}&modcommentkey=$_GET[modcommentkey]{/if}" >
+  <input type="hidden" name="referer" value="{echo dreferer()}" />
+  <input type="hidden" name="editsubmit" value="true" />
+  <!--{if $_G[inajax]}--><input type="hidden" name="handlekey" value="$_GET[handlekey]" /><!--{/if}-->
+  <input type="hidden" name="formhash" value="{FORMHASH}" />
+  <div class="postarea">
+  
+  <p class="bl_line ta_line">
+  <textarea id="message_{$cid}" name="message" placeholder="{lang edit_content}">$comment[message]</textarea>
+  </p>
+  <p class="btn_post">
+  <button type="submit" name="editsubmit_btn" id="editsubmit_btn" value="true" class="btn_pn btn_pn_blue"><strong>{lang submit}</strong></button>
+  </p>
+  </div>
+</form>
+
+
+<!--{elseif $_GET['op'] == 'delete'}-->
+<div class="confirm">
+  <h3>{lang delete_reply}</h3>
+  <form id="deletecommentform_{$cid}" name="deletecommentform_{$cid}" method="post" autocomplete="off" action="home.php?mod=spacecp&ac=comment&op=delete&cid=$cid">
+		<input type="hidden" name="referer" value="{echo dreferer()}" />
+		<input type="hidden" name="deletesubmit" value="true" />
+		<input type="hidden" name="formhash" value="{FORMHASH}" />
+		<!--{if $_G[inajax]}--><input type="hidden" name="handlekey" value="$_GET[handlekey]" /><!--{/if}-->
+    <div>{lang delete_reply_message}</div>
+    <p><button type="submit" name="deletesubmitbtn" value="true"><strong>{lang determine}</strong></button></p>
+  </form>
+</div>
+<!--{elseif $_GET['op'] == 'reply'}-->
+<form id="replycommentform_{$comment[cid]}" name="replycommentform_{$comment[cid]}" method="post" autocomplete="off" action="home.php?mod=spacecp&ac=comment" {if $_G[inajax]} onsubmit="ajaxpost('replycommentform_{$comment[cid]}', 'return_$_GET[handlekey]');"{/if}>
+  <input type="hidden" name="referer" value="{echo dreferer()}" />
+  <input type="hidden" name="id" value="$comment[id]" />
+  <input type="hidden" name="idtype" value="$comment[idtype]" />
+  <input type="hidden" name="cid" value="$comment[cid]" />
+  <input type="hidden" name="commentsubmit" value="true" />
+  <!--{if $_G[inajax]}--><input type="hidden" name="handlekey" value="$_GET[handlekey]" /><!--{/if}-->
+  <input type="hidden" name="formhash" value="{FORMHASH}" />
+  <div class="postarea">
+  
+    <p class="bl_line ta_line">
+    <textarea id="message_pop_{$comment[cid]}" name="message"  placeholder="{lang content}"></textarea>
+    </p>
+
+    <p class="btn_post">
+    <button type="submit" name="commentsubmit_btn" id="commentsubmit_btn" value="true" class="btn_pn btn_pn_blue"><strong>{lang reply}</strong></button>
+    </p>
+    <!--{if $secqaacheck || $seccodecheck}-->
+    <!--{subtemplate common/seccheck}-->
+    <!--{/if}-->    
+  </div>
+</form>
+<!--{/if}-->
+
+<!--{template common/footer}-->

@@ -1,0 +1,64 @@
+<!--{template common/header1}-->
+<!--{eval $nohtml['footer']='1';}-->
+<!--{block spaceaction}-->
+<a href="home.php?mod=spacecp&ac=blog" class="spaceaction"><img src="/template/lyrs_mobile/touch/style/blog.png" /></a>
+<!--{/block}-->
+<!--{template home/space_top}-->
+<div class="blogarea"  id="minh">
+<!--{if $count}-->
+<table cellspacing="0" cellpadding="0" id="listtableid" class="bloglist">
+  <!--{loop $list $k $value}-->
+  <!--{eval $list[$k]['mon']=$value['mon']=dgmdate(strtotime($value[dateline]),'m-d')}-->
+  <!--{eval $list[$k]['yea']=$value['yea']=dgmdate(strtotime($value[dateline]),'Y')}-->
+  <!--{eval $uk=$k-1}-->
+  <tbody id="autolist_{$value[blogid]}">
+    <tr>
+      <th>
+      <!--{if $k==0 || $list[$k]['mon']!=$list[$uk]['mon']}-->
+      <p>$value['mon']</p>
+      <h4>$value['yea']</h4>
+      <!--{/if}-->
+      </th>
+      <td>
+      <div class="bloginfo" onclick="goto('home.php?mod=space&uid=$value[uid]&do=blog&id=$value[blogid]')">
+        <h3>$value[subject]</h3>
+        <div class="cl">
+        <!--{if $value[pic]}--><img src="$value[pic]" alt="$value[subject]" /><!--{/if}-->
+        $value[message]
+        </div>      
+      </div>
+
+      </td>
+    </tr>
+  </tbody>
+  <!--{/loop}-->
+</table>
+
+<!--{eval $realpages = @ceil(($count)/$perpage);}-->
+<!--{eval $maxpage = ($realpages > 1000) ? 1000 : $realpages;}-->
+<!--{eval $nextpage = ($page + 1) > $maxpage ? 1 : ($page + 1);}-->
+<!--{if $space['uid'] == $_G[uid]}-->
+<!--{eval $multipage_more = "home.php?mod=space&do=blog&view=me".'&page='.$nextpage;}-->
+<!--{else}-->
+<!--{eval $multipage_more = "home.php?mod=space&uid=$space[uid]&do=blog&view=me&from=space".'&page='.$nextpage;}-->
+<!--{/if}-->
+
+<!--{if $multi}-->
+<a href="javascript:;" rel="$multipage_more" curpage="$page" id="autopbn" totalpage="$maxpage" >{lang next_page_extra}</a>
+<!--{template common/autoloadpage}-->
+<span id="fd_page_bottom">$multi</span>
+<!--{/if}-->
+<!--{else}-->
+<p class="nolist">{lang no_related_blog}</p>
+<!--{/if}-->
+</div>
+<script language="javascript">
+cheight=document.body.clientHeight;
+<!--{if $nvnum>0}-->
+var th=225;
+<!--{else}-->
+var th=185;
+<!--{/if}-->
+document.getElementById('minh').style.minHeight=cheight-th+'px';
+</script>
+<!--{template common/footer}-->

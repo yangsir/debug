@@ -1,0 +1,26 @@
+<!--{if CURMODULE != 'comeing_wechat' && $_G['cache']['plugin']['comeing_wechat']}-->
+<!--{eval require './source/plugin/comeing_wechat/login.php';}-->
+<!--{/if}-->
+
+<!--{if !$is_wechat}-->
+<div id="header">
+  <div class="header">
+    <!--{if $backurl}-->
+    $backurl
+    <!--{else}-->
+    <a href="forum.php?forumlist=1" class="logo"><img src="/template/lyrs_mobile/touch/style/home.png" />$_G['setting']['bbname']</a>
+    <!--{/if}-->
+    <ul>
+      <li><a href="search.php?mod=forum&mobile=2"><img src="/template/lyrs_mobile/touch/style/search.png" /></a></li>
+    </ul>
+  </div>
+</div>
+<!--{else}-->
+<style type="text/css">
+#main{ padding-top:0px;}
+.topnv{ top:0px;}
+.topnv_fixed{ top:0px;}
+.viewpic strong{ top:15px;}
+</style>
+<!--{/if}-->
+<div id="main">

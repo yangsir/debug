@@ -1,0 +1,146 @@
+<?php exit;?>
+<div class="mbn">
+	<!--{if $activity['thumb']}--><img src="$activity['thumb']" width="{if $activity[width] > 230}230{else}$activity[width]{/if}" /><!--{else}--><img src="{IMGDIR}/nophoto.gif" width="230" height="230" /><!--{/if}-->
+		<dl>
+			<dt>{lang activity_type}: <strong>$activity[class]</strong></dt>
+			<dt>{lang activity_starttime}:
+				<!--{if $activity['starttimeto']}-->
+					{lang activity_start_between}
+				<!--{else}-->
+					$activity[starttimefrom]
+				<!--{/if}-->
+			</dt>
+			<dt>{lang activity_space}: $activity[place]</dt>
+			<dt>{lang gender}:
+				<!--{if $activity['gender'] == 1}-->
+					{lang male}
+				<!--{elseif $activity['gender'] == 2}-->
+					{lang female}
+				<!--{else}-->
+					 {lang unlimited}
+				<!--{/if}-->
+			</dt>
+			<!--{if $activity['cost']}-->
+				<dt>{lang activity_payment}: $activity[cost] {lang payment_unit}</dt>
+			<!--{/if}-->
+		</dl>
+		<!--{if !$_G['forum_thread']['is_archived']}-->
+		<dl class="mtn">
+			<dt>{lang activity_already}:
+				<em>$allapplynum</em> {lang activity_member_unit}
+				<!--{if $post['invisible'] == 0 && ($_G['forum_thread']['authorid'] == $_G['uid'] || (in_array($_G['group']['radminid'], array(1, 2)) && $_G['group']['alloweditactivity']) || ( $_G['group']['radminid'] == 3 && $_G['forum']['ismoderator'] && $_G['group']['alloweditactivity']))}-->
+					<span class="xi1">{lang activity_mod}</span>
+				<!--{/if}-->
+			</dt>
+		</dl>
+		<dl>
+			<!--{if $activity['number']}-->
+			<dt>{lang activity_about_member}:
+				$aboutmembers {lang activity_member_unit}
+			</dt>
+			<!--{/if}-->
+			<!--{if $activity['expiration']}-->
+				<dt>{lang post_closing}: $activity[expiration]</dt>
+			<!--{/if}-->
+			<dt>
+				<!--{if $post['invisible'] == 0}-->
+					<!--{if $applied && $isverified < 2}-->
+						<p class="xg1 xs1"><!--{if !$isverified}-->{lang activity_wait}<!--{else}-->{lang activity_join_audit}<!--{/if}--></p>
+						<!--{if !$activityclose}-->
+                        <!--{/if}-->
+					<!--{elseif !$activityclose}-->
+                        <!--{if $isverified != 2}-->
+                        <!--{else}-->
+                        <p class="pns mtn">
+                            <input value="{lang complete_data}" name="ijoin" id="ijoin" />
+                        </p>
+                        <!--{/if}-->
+					<!--{/if}-->
+				<!--{/if}-->
+			</dt>
+		</dl>
+		<!--{/if}-->
+</div>
+
+<div id="postmessage_$post[pid]" class="postmessage">$post[message]</div>
+
+
+<!--{if $_G['uid'] && !$activityclose && (!$applied || $isverified == 2)}-->
+	<div id="activityjoin" class="activityjoin">
+    	<div class="pd5">
+	<!--{if $_G['forum']['status'] == 3 && helper_access::check_module('group') && $isgroupuser != 'isgroupuser'}-->
+        <p>{lang activity_no_member}</p>
+        <p><a href="forum.php?mod=group&action=join&fid=$_G[fid]" class="xi2">{lang activity_join_group}</a></p>
+	<!--{else}-->
+		<form name="activity" id="activity" method="post" autocomplete="off" action="forum.php?mod=misc&action=activityapplies&fid=$_G[fid]&tid=$_G[tid]&pid=$post[pid]{if $_GET['from']}&from=$_GET['from']{/if}&mobile=2" >
+			<input type="hidden" name="formhash" value="{FORMHASH}" />
+
+			<!--{if $_G['setting']['activitycredit'] && $activity['credit'] && !$applied}--><p class="xi1">{lang activity_need_credit} $activity[credit] {$_G['setting']['extcredits'][$_G['setting']['activitycredit']][title]}</p><!--{/if}-->
+                <!--{if $activity['cost']}-->
+                   <p>{lang activity_paytype} <label><input class="pr" type="radio" value="0" name="payment" id="payment_0" checked="checked" />{lang activity_pay_myself}</label> <label><input class="pr" type="radio" value="1" name="payment" id="payment_1" />{lang activity_would_payment} </label> <input name="payvalue" size="3" class="txt_s" /> {lang payment_unit}</p>
+                <!--{/if}-->
+                <!--{if !empty($activity['ufield']['userfield'])}-->
+                    <!--{loop $activity['ufield']['userfield'] $fieldid}-->
+                    <!--{if $settings[$fieldid][available]}-->
+                        <strong>$settings[$fieldid][title]<span class="xi1">*</span></strong>
+                        $htmls[$fieldid]
+                    <!--{/if}-->
+                    <!--{/loop}-->
+                <!--{/if}-->
+                <!--{if !empty($activity['ufield']['extfield'])}-->
+                    <!--{loop $activity['ufield']['extfield'] $extname}-->
+                        $extname<input type="text" name="$extname" maxlength="200" class="txt" value="{if !empty($ufielddata)}$ufielddata[extfield][$extname]{/if}" />
+                    <!--{/loop}-->
+                <!--{/if}-->
+			<input type="text" value="$applyinfo[message]" class="input" color="gray" name="message" placeholder="{lang leaveword}">
+			<div class="o pns">
+				<!--{if $_G['setting']['activitycredit'] && $activity['credit'] && checklowerlimit(array('extcredits'.$_G['setting']['activitycredit'] => '-'.$activity['credit']), $_G['uid'], 1, 0, 1) !== true}-->
+					<p class="xi1">{$_G['setting']['extcredits'][$_G['setting']['activitycredit']][title]} {lang not_enough}$activity['credit']</p>
+				<!--{else}-->
+					<input type="hidden" name="activitysubmit" value="true">
+					<em class="xi1" id="return_activityapplies"></em>
+					<button type="submit" class="button3 mtm"><span>{lang activity_join}</span></button>
+				<!--{/if}-->
+			</div>
+		</form>
+
+		<script type="text/javascript">
+			function succeedhandle_activityapplies(locationhref, message) {
+				showDialog(message, 'notice', '', 'location.href="' + locationhref + '"');
+			}
+		</script>
+	<!--{/if}-->
+    	</div>
+	</div>
+<!--{elseif $_G['uid'] && !$activityclose && $applied}-->
+<div id="activityjoincancel" class="activityjoincancel">
+	<div class="pd5">
+        <form name="activity" method="post" autocomplete="off" action="forum.php?mod=misc&action=activityapplies&fid=$_G[fid]&tid=$_G[tid]&pid=$post[pid]{if $_GET['from']}&from=$_GET['from']{/if}">
+        <input type="hidden" name="formhash" value="{FORMHASH}" />
+		<input type="text" value="" class="input" color="gray" name="message" placeholder="{lang leaveword}">
+        <p class="mtn">
+        <button type="submit" class="button3 mtm" name="activitycancel"  value="true"><span>{lang activity_join_cancel}</span></button>
+        </p>
+        </form>
+    </div>
+</div>
+<!--{/if}-->
+
+<!--{if $applylist}-->
+<div class="bm ptn pbn xs1">
+	<div class="activitylist">
+		<p class="pd5">{lang activity_new_join} ($applynumbers {lang activity_member_unit})</p>
+		<ul>
+			<!--{loop $applylist $apply}-->
+				<li>
+					<a target="_blank" href="home.php?mod=space&uid=$apply[uid]">$apply[username]</a>
+					<!--{if $activity['cost']}-->
+					<i><!--{if $apply[payment] >= 0}-->($apply[payment] {lang payment_unit})<!--{else}-->({lang activity_self})<!--{/if}--></i>
+					<!--{/if}-->
+					<span>$apply[dateline]</span>
+				</li>
+			<!--{/loop}-->
+		</ul>
+    </div>
+</div>
+<!--{/if}-->

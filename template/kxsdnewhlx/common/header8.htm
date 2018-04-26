@@ -1,0 +1,225 @@
+<!--{subtemplate common/header_common}-->
+	<meta name="application-name" content="$_G['setting']['bbname']" />
+	<meta name="msapplication-tooltip" content="$_G['setting']['bbname']" />
+	<!--{if $_G['setting']['portalstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][1]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['portal']) ? 'http://'.$_G['setting']['domain']['app']['portal'] : $_G[siteurl].'portal.php'};icon-uri={$_G[siteurl]}{IMGDIR}/portal.ico" /><!--{/if}-->
+	<meta name="msapplication-task" content="name=$_G['setting']['navs'][2]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['forum']) ? 'http://'.$_G['setting']['domain']['app']['forum'] : $_G[siteurl].'forum.php'};icon-uri={$_G[siteurl]}{IMGDIR}/bbs.ico" />
+	<!--{if $_G['setting']['groupstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][3]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['group']) ? 'http://'.$_G['setting']['domain']['app']['group'] : $_G[siteurl].'group.php'};icon-uri={$_G[siteurl]}{IMGDIR}/group.ico" /><!--{/if}-->
+	<!--{if helper_access::check_module('feed')}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][4]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['home']) ? 'http://'.$_G['setting']['domain']['app']['home'] : $_G[siteurl].'home.php'};icon-uri={$_G[siteurl]}{IMGDIR}/home.ico" /><!--{/if}-->
+	<!--{if $_G['basescript'] == 'forum' && $_G['setting']['archiver']}-->
+		<link rel="archives" title="$_G['setting']['bbname']" href="{$_G[siteurl]}archiver/" />
+	<!--{/if}-->
+	<!--{if !empty($rsshead)}-->$rsshead<!--{/if}-->
+	<!--{if widthauto()}-->
+		<link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_{STYLEID}_widthauto.css?{VERHASH}" />
+		<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
+	<!--{/if}-->
+	<!--{if $_G['basescript'] == 'forum' || $_G['basescript'] == 'group'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}forum.js?{VERHASH}"></script>
+	<!--{elseif $_G['basescript'] == 'home' || $_G['basescript'] == 'userapp'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}home.js?{VERHASH}"></script>
+	<!--{elseif $_G['basescript'] == 'portal'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $_G['basescript'] != 'portal' && $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+	<link rel="stylesheet" type="text/css" id="diy_common" href="data/cache/style_{STYLEID}_css_diy.css?{VERHASH}" />
+	<!--{/if}--> 
+
+</head>
+
+<body id="nv_{$_G[basescript]}" class="pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}" onkeydown="if(event.keyCode==27) return false;">
+	<div id="append_parent"></div><div id="ajaxwaitid"></div>
+	<!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+		<!--{template common/header_diy}-->
+	<!--{/if}-->
+	<!--{if check_diy_perm($topic)}-->
+		<!--{template common/header_diynav}-->
+	<!--{/if}-->
+	<!--{if CURMODULE == 'topic' && $topic && empty($topic['useheader']) && check_diy_perm($topic)}-->
+		$diynav
+	<!--{/if}-->
+	<!--{if empty($topic) || $topic['useheader']}-->
+		<!--{if $_G['setting']['mobile']['allowmobile'] && (!$_G['setting']['cacheindexlife'] && !$_G['setting']['cachethreadon'] || $_G['uid']) && ($_GET['diy'] != 'yes' || !$_GET['inajax']) && ($_G['mobile'] != '' && $_G['cookie']['mobile'] == '' && $_GET['mobile'] != 'no')}-->
+			<div class="xi1 bm bm_c">
+			    {lang your_mobile_browser}<a href="{$_G['siteurl']}forum.php?mobile=yes">{lang go_to_mobile}</a> <span class="xg1">|</span> <a href="$_G['setting']['mobile']['nomobileurl']">{lang to_be_continue}</a>
+			</div>
+		<!--{/if}-->
+		<!--{if $_G['setting']['shortcut'] && $_G['member'][credits] >= $_G['setting']['shortcut']}-->
+			<div id="shortcut">
+				<span><a href="javascript:;" id="shortcutcloseid" title="{lang close}">{lang close}</a></span>
+				{lang shortcut_notice}
+				<a href="javascript:;" id="shortcuttip">{lang shortcut_add}</a>
+
+			</div>
+			<script type="text/javascript">setTimeout(setShortcut, 2000);</script>
+		<!--{/if}-->
+	<!--{if check_diy_perm($topic)}-->
+						$diynav
+					<!--{/if}-->	
+<!--{ad/headerbanner/wp a_h}-->
+
+<!--{if CURMODULE != 'logging' }-->
+		<!--top开始-->
+    	<!--{if $_G['basescript'] == 'portal' && CURMODULE == 'index' || $_G['basescript'] == 'portal' && CURMODULE == 'list' }-->
+<link href="$_G['style']['styleimgdir']/css/phead.css" rel="stylesheet" />
+<script src="$_G['style']['styleimgdir']/js/phd.js" type="text/javascript"></script>
+<!--top开始-->
+<div class="wapper_out sitenavbg level1">
+    <div class="wapper sitenav overvisible">
+        <ul class="z head_ul">
+            <li class="pl0"><a href="javascript:;"  onclick="setHomepage('{$_G['siteurl']}');"><i class="sitenavico set_index">&nbsp;</i>设为首页</a></li>
+            <li><a href="misc.php?mod=mobile" target="_blank"><i class="sitenavico client">&nbsp;</i>手机版</a></li>
+            <li class="weixin_box dropmenu pr ">
+                <a href="javascript:void(0);" class="now"><i class="sitenavico weChat">&nbsp;</i>官方微信</a>
+                <div class="weixin_tip dropdown"><div class="weixin_img"></div><p class="gc6 tac mt5">打开微信扫一扫</p></div>
+            </li>
+            <li><a href="http://wpa.qq.com/msgrd?v=1&uin=$_G['setting']['site_qq']&site=qq&menu=yes" class="" target="_blank"><i class="sitenavico advertisement">&nbsp;</i>广告联系</a></li>
+        </ul>
+    	<!--{else}-->   
+<link href="$_G['style']['styleimgdir']/css/fhead.css" rel="stylesheet" />
+<script src="$_G['style']['styleimgdir']/js/hdsc.js" type="text/javascript"></script>
+<div class="wapper_out sitenavbg overvisible level3">
+    <div class="wapper sitenav overvisible">
+        <a href="#" title="$_G['setting']['sitename']" class="sm_logo z mr10"></a>
+	        <style>
+.schl {
+    float: left;
+    display: inline;
+}
+.wp{ width:1000px;}
+</style>
+		    	<!--{if $_G['basescript'] == 'forum' && CURMODULE == 'viewthread'}-->
+
+	<form method="post" autocomplete="off" action="search.php?searchsubmit=yes" target="_blank">
+	<input id="mod" type="hidden" name="mod" value="forum">
+			<input type="hidden" name="mod" id="mod" value="forum" />
+						<input type="hidden" name="formhash" value="{FORMHASH}" />
+						<input type="hidden" name="srchtype" value="title" />
+						<input type="hidden" name="srhfid" value="$_G[fid]" />
+						<input type="hidden" name="srhlocality" value="$_G['basescript']::{CURMODULE}" />
+
+	<div class="small_search schl">
+
+		<input type="text" name="srchtxt" id="searchtxt" value="" class="text schl"><span class="s_box y"><input type="submit" value="搜索" id="searchbut" class="searchbut sitenavico"></span>
+
+	</div>
+
+</form>         <!--{/if}-->
+     <!--{/if}-->
+      <div class="y">
+    <ul id="userlogin">
+      <!--{if !$_G['uid']}-->
+            <li>
+                <a title="登陆"  class="nav_login_title" <!--{if $_G['basescript'] == 'portal' && CURMODULE == 'index' || $_G['basescript'] == 'portal' && CURMODULE == 'list' }-->href="javascript:void(0)"<!--{else}-->href="member.php?mod=logging&action=login"<!--{/if}-->><i class="sitenavico login">&nbsp;</i>登录</a>
+               &nbsp; <em class="vertical">|</em>&nbsp;
+                <a title="注册"  href="member.php?mod=register" >注册</a>
+        <!--{if $_G['basescript'] == 'portal' && CURMODULE == 'index' || $_G['basescript'] == 'portal' && CURMODULE == 'list' }-->
+		        <div id="close" class="login_pop_up">
+                    <div class="loginframe">
+	<script type="text/javascript" src="{$_G[setting][jspath]}logging.js?{VERHASH}"></script>
+	<form method="post" autocomplete="off" id="lsform" action="member.php?mod=logging&action=login&loginsubmit=yes&infloat=yes&lssubmit=yes" onSubmit="{if $_G['setting']['pwdsafety']}pwmd5('ls_password');{/if}return lsSubmit();">
+		<span id="return_ls" style="display:none"></span>
+                       		 <a onClick="javascript:$('close').style.display='none';"  style="float: right;margin-top: -18px ;color:#666666" href="javascript:;">关闭</a>
+     <div class="loginframe_blank mb10 clearfix">
+                                <input type="text" value  name="username" id="ls_username" autocomplete="off" class="loginframe-label-ipt userName" placeholder="用户名">
+                            </div>
+                            <div class="loginframe_blank mb10 clearfix">
+                               <input type="password" value name="password" id="ls_password" class="loginframe-label-ipt userPwd" placeholder="请输入密码">
+                            </div>
+                            <div class="msg_box"><span class="login_msg"></span></div>
+                            <div class="loginframe_blank">
+                                <span class="loginframe-label clearfix mb10">
+                                    <label class="z">
+                                       <input type="checkbox" name="cookietime" id="ls_cookietime" class="loginframe-checkbox z"  value="2592000" tabindex="903">
+                                        <span class="z">下次自动登入</span>
+                                    </label>
+                                    <a href="javascript:;" onClick="showWindow('login', 'member.php?mod=logging&action=login&viewlostpw=1')" class="y gc3" >忘记密码？</a>
+                                </span>
+                                <input type="submit" class="loginframe-btn userLogin" value="登 入">
+	                            </div>
+                        </form>
+                    </div>
+                </div>
+    				<!--{/if}-->	
+        </li>
+            <li class="pr0">
+                <a title="扫一扫访问微社区"  href="plugin.php?id=wechat:login"><i class="sitenavico SinaWeibo">&nbsp;</i></a>
+                <a title="QQ"  href="$_G[connect][login_url]&statfrom=login_simple"><i class="sitenavico qq">&nbsp;</i></a>
+            </li>
+ 	<!--{else}-->   
+   <div class="y" style="margin-top:10px" >
+<!--{hook/global_usernav_extra1}-->
+</div>
+   <div class="y">
+<li class="dropmenu avsimg"><a class="now" href="home.php?mod=space&uid=$_G[uid]" target="_blank"><!--{avatar($_G[uid],middle)}--> {echo cutstr($_G[member][username],10)} <i class="sitenavico downward">&nbsp;</i> </a>
+<ul class="dropdown dropdown_info_box user_msg" style="display: none;">
+<li class=""><a href="home.php?mod=spacecp&ac=usergroup">$_G[group][grouptitle]</a></li>       
+<li class="last"><a href="home.php?mod=spacecp&ac=credit&showcredit=1">积分:<em class="orange"> $_G[member][credits]</em></a></li></ul></li>
+<li><a class="" href="home.php?mod=space&do=notice" title="提醒"><i class="sitenavico remind<!--{if $_G[member][newprompt]}--> remind_have<!--{else}--><!--{/if}-->">&nbsp;</i>提醒</a></li>
+<li><a class="" href="home.php?mod=space&do=pm" title="短消息"><i class="sitenavico shortMessage<!--{if $_G[member][newpm]}--> shortMessage_have<!--{else}--><!--{/if}-->">&nbsp;</i>短消息</a></li>
+<li><em class="vertical">|</em></li>
+<li class="dropmenu "><a class="now" href="home.php?mod=space&uid=$_G[uid]" target="_blank" title="个人中心">个人中心<i class="sitenavico downward">&nbsp;</i></a>
+<ul class="dropdown dropdown_info_box personal_center" style="display: none;">   
+<li><a href="home.php?mod=spacecp&ac=avatar">修改头像</a></li>    
+   <li><a href="home.php?mod=spacecp">修改资料</a></li> 
+   <li><a href="home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp">帐号绑定</a></li>  
+   <li><a href="home.php?mod=spacecp&ac=profile&op=password">修改密码</a></li>			
+   <!--{if ($_G['group']['allowmanagearticle'] || $_G['group']['allowpostarticle'] || $_G['group']['allowdiy'] || getstatus($_G['member']['allowadmincp'], 4) || getstatus($_G['member']['allowadmincp'], 6) || getstatus($_G['member']['allowadmincp'], 2) || getstatus($_G['member']['allowadmincp'], 3))}-->  <li><a href="portal.php?mod=portalcp"><!--{if $_G['setting']['portalstatus'] }-->{lang portal_manage}<!--{else}-->{lang portal_block_manage}  <!--{/if}--></a></li>  <!--{/if}-->  
+   <!--{if $_G['uid'] && $_G['group']['radminid'] > 1}-->  <li><a href="forum.php?mod=modcp&fid=$_G[fid]" target="_blank">{lang forum_manager}</a></li>  <!--{/if}-->  
+   <!--{if $_G['uid'] && $_G['adminid'] == 1 && $_G['setting']['cloud_status']}-->  <li><a href="admin.php?frames=yes&action=cloud&operation=applist" target="_blank">{lang cloudcp}</a></li>  <!--{/if}-->  
+   <!--{if $_G['uid'] && getstatus($_G['member']['allowadmincp'], 1)}-->  <li><a href="admin.php" target="_blank">{lang admincp}</a></li>  <!--{/if}-->    
+   <li><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">退出登录</a></li></ul>
+</li>   	    </div>
+				<!--{/if}-->	
+ </ul>
+ </div>
+   </div>
+</div>
+<!--top结束-->
+
+		    	<!--{if $_G['basescript'] == 'forum' && CURMODULE == 'viewthread' || $_G['basescript'] == 'member' && CURMODULE == 'register' }-->
+	<!--{else}-->   
+	<!--头部开始-->   
+
+<div class="wp overvisible">
+   					<!--{eval $mnid = getcurrentnav();}-->
+<div class="zlogo mt20 mr10"><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></div>
+    <div class="head_search z mt25 clearfix">
+        <form  method="{if $_G[fid] && !empty($searchparams[url])}get{else}post{/if}" autocomplete="off" onSubmit="searchFocus($('scbar_txt'))" action="{if $_G[fid] && !empty($searchparams[url])}$searchparams[url]{else}search.php?searchsubmit=yes{/if}" id="head_search_form" class="pr" target="_blank">
+       		<input type="hidden" name="mod" id="scbar_mod" value="forum" />
+		<input type="hidden" name="formhash" value="{FORMHASH}" />
+		<input type="hidden" name="srchtype" value="title" />
+		<input type="hidden" name="srhfid" value="$_G[fid]" />
+		<input type="hidden" name="srhlocality" value="$_G['basescript']::{CURMODULE}" />
+		<!--{if !empty($searchparams[params])}-->
+			<!--{loop $searchparams[params] $key $value}-->
+			<!--{eval $srchotquery .= '&' . $key . '=' . rawurlencode($value);}-->
+			<input type="hidden" name="$key" value="$value" />
+			<!--{/loop}-->
+			<input type="hidden" name="source" value="discuz" />
+			<input type="hidden" name="fId" id="srchFId" value="$_G[fid]" />
+			<input type="hidden" name="q" id="cloudsearchquery" value="" />
+		<!--{/if}-->
+    <input type="text" class="z" id="searchtxt"  name="srchtxt" id="scbar_txt"  onBlur="if (value ==''){value='输入你想搜索的关键词...'}" onFocus="if (value =='输入你想搜索的关键词...'){value =''}" value="输入你想搜索的关键词..." autocomplete="off" x-webkit-speech speech  style="color:#999" />
+            <input type="submit" class="searchbut sitenavico fl" id="searchbut" value="">
+        </form>
+    </div>
+    <a class="y top_active mt15" href="misc.php?mod=mobile">
+<img src="$_G['style']['styleimgdir']/logor.jpg" width="253" height="52" title="随时随地逛社区"/></a> 
+    <div class="blank15"></div>
+    <div class="clear"></div>
+</div>
+	
+	
+	  <div class="blank10">
+   </div>
+ <!--{/if}-->
+	<!--头部结束-->   
+ <!--{/if}-->
+
+		<!--{hook/global_header}-->
+	<!--{/if}-->
+
+	<div id="wp" class="wp">

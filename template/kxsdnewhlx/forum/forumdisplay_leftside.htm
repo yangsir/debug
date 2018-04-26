@@ -1,0 +1,29 @@
+		    	<!--{if $_G['basescript'] == 'forum' && CURMODULE == 'viewthread' || $_G['basescript'] == 'group' && CURMODULE == 'viewthread'}-->  <!--{else}-->
+ <link href="$_G['style']['styleimgdir']/leftside.css" rel="stylesheet" />
+            
+<div style="position:relative" class="wapper overvisible"> <div id="infoTab"><div id="left_side_bar"><p>ÉçÇøµ¼º½</p>
+<gdt id="left_side_bars"> 
+ <!--{/if}-->	
+ <!--{eval $temp = $dpost = array();$on=0;$query = DB::query("SELECT fid,fup,type,name,todayposts,domain FROM ".DB::table('forum_forum')." WHERE status='1' ORDER BY displayorder;");while($data = DB::fetch($query)) $temp[]=$data;}-->
+				  <!--{loop $temp $bbs_group}-->
+				  <!--{if $bbs_group['type']=="group"}-->
+				  <!--{eval $on++;}-->
+						  <!--{eval $forumurl = !empty($bbs_group['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$bbs_group['domain'].'.'.$_G['setting']['domain']['root']['forum'] : 'forum.php?gid='.$bbs_group['fid'];}-->
+
+<dl><dt>{$bbs_group['name']}</dt>	
+   <!--{loop $temp $bbs_forum}-->
+						  <!--{if $bbs_forum['fup']==$bbs_group['fid'] and $bbs_forum['type']=="forum"}-->
+						  <!--{eval $forumurl = !empty($bbs_forum['domain']) && !empty($_G['setting']['domain']['root']['forum']) ? 'http://'.$bbs_forum['domain'].'.'.$_G['setting']['domain']['root']['forum'] : 'forum.php?mod=forumdisplay&fid='.$bbs_forum['fid'];}-->
+<dd> 
+ <a href="{$forumurl}" target="_blank">{$bbs_forum['name']}</a>
+ </dd>  <!--{/if}--> <!--{/loop}--> 
+</dl>	 <!--{/if}-->
+				  <!--{/loop}-->	 
+		    	<!--{if $_G['basescript'] == 'forum' && CURMODULE == 'viewthread' || $_G['basescript'] == 'group' && CURMODULE == 'viewthread'}-->  <!--{else}-->
+</gdt></div></div></div>
+    <style>
+.follows{position: fixed; top:0;z-index: 100;_position:absolute!important;_top:expression(eval(document.documentElement.scrollTop));}
+</style>
+				<script src="$_G['style']['styleimgdir']/js/leftside.js" type="text/javascript"></script>
+
+ <!--{/if}-->

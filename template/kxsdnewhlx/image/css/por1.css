@@ -1,0 +1,39 @@
+h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,select,textarea,th,td,span {margin:0;padding:0;}
+body,button,input,select,textarea {font:12px \5b8b\4f53,Arial,tahoma,arial,sans-serif;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;}
+address,cite,dfn,em,var {font-style:normal;}
+code,kbd,pre,samp {font-family:courier new,courier,monospace;}
+small {font-size:12px;}
+ul,ol,li {list-style:none;}
+a {text-decoration:none;cursor:pointer;}
+a:hover {text-decoration:underline;}
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+legend {color:#000;}
+fieldset,img {border:0;}
+button,input,select,textarea {font-size:100%;outline:none;}
+table {border-collapse:collapse;border-spacing:0;}
+img {vertical-align:top;display:inline-block;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {display:block;margin:0;padding:0;}
+mark {background:#ff0;}
+object,embed {outline:0;}
+p {line-height:1.8;color:#666;}
+
+/*	font	*/
+.bigfs {font-family:'Microsoft YaHei','YaHei','SimHei','Hei';}
+.fs12 {font-size:12px!important;}
+.fs14 {font-size:14px!important;}
+.fs16 {font-size:16px!important;}
+.fs18 {font-size:18px!important;}
+.fs20 {font-size:20px!important;}
+.fs22 {font-size:22px!important;}
+.fw {font-weight:bold;}
+.fwnm {font-weight:normal!important;}
+.tac {text-align:center;}
+.tar {text-align:right;}
+.tal {text-align:left;}
+.dn {display:none;}
+.db{ display:block;}
+.di{ display:inline;}
+.oh	{overflow:hidden;}
+

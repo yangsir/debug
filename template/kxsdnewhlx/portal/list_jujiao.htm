@@ -1,0 +1,134 @@
+<!--{subtemplate common/header}-->
+	<div id="wp" class="wp">
+
+<style id="diy_style" type="text/css"></style>
+				<!--{subtemplate forum/forumdisplay_leftside}-->
+
+<!--[name]社区聚焦页[/name]-->
+<link rel="stylesheet" href="$_G['style']['styleimgdir']/css/jujiao.css?{VERHASH}" /><link href="$_G['style']['styleimgdir']/css/por1.css" rel="stylesheet" />
+
+<div class="clear"></div><div class="blankl10"></div>
+<div class="wapper">
+<div class="fll z">
+<div id="slider_wapper">
+<!--[diy=jujiao1]--><div id="jujiao1" class="area"></div><!--[/diy]-->
+ 		</div>		
+</div>
+
+<div class="f_hot y">
+<ul><!--[diy=jujiao2]--><div id="jujiao2" class="area"></div><!--[/diy]--></ul>
+</div></div>
+<div class="blankl0" style="margin-top:10px"></div>
+
+<div class="wapper"><div class="w290">
+ <div class="titless clearfix">
+            <div class="t_left"><span class="fs16 bigfs gc3">每日<em class="c_red">贴图</em></span></div><div class="t_right">&nbsp;</div>
+        </div>
+<!--[diy=jujiao3]--><div id="jujiao3" class="area"></div><!--[/diy]-->
+
+<div class="blank10"></div>
+
+<div class="see_box">
+  <div class="titless clearfix">
+                <div class="t_left w110"><span class="fs16 bigfs gc3">贵州<em class="c_red">会员榜</em></span></div><div class="t_right w180 tar"><div class="t8"><a href="/member.php?mod=regW28s4hjhfdrerDHV" title="会员注册"><img style="float:left" src="$_G['style']['styleimgdir']/aa/jjbk.jpg" width="150"></a></div></div></div>
+<!--[diy=jujiao4]--><div id="jujiao4" class="area"></div><!--[/diy]-->
+</div>
+<div class="blank10"></div><div class="ad_290 mb5"><!--[diy=diy_ad1]--><div id="diy_ad1" class="area"></div><!--[/diy]--> </div>
+   <div class="titless clearfix">
+            <div class="t_left"><span class="fs16 bigfs gc3">生活<em class="c_red">信息</em></span></div><div class="t_right">&nbsp;</div>
+        </div>
+<!--[diy=jujiao5]--><div id="jujiao5" class="area"></div><!--[/diy]-->
+<div class="blank10"></div>
+<div class="ad_290"><!--[diy=diy_ad2]--><div id="diy_ad2" class="area"></div><!--[/diy]--></div></div>
+
+<div class="w450">
+ <div class="titless clearfix">
+            <div class="t_left"><span class="fs16 bigfs gc3">焦点<em class="c_red">访谈</em></span></div><div class="t_right tar w380"><div class="t8"><img style="float:left" src="$_G['style']['styleimgdir']/aa/jdft.jpg"></div><a href="/" target="_blank" class="gc6">更多</a></div>
+        </div>
+
+<!--[diy=jd1]--><div id="jd1" class="area"></div><!--[/diy]-->
+
+<div class="biaoqian"><!--[diy=jdad]--><div id="jdad" class="area"></div><!--[/diy]-->
+</div><div class="blank5"></div>
+
+<div class="title_bg"><span class="fs16 gc3 bigfs">口碑<em class="c_red">焦点</em></span></div>
+<!--[diy=jd2]--><div id="jd2" class="area"></div><!--[/diy]-->
+</div>
+
+  
+
+<div class="w220">
+<div class="checkin_box">
+
+    <div class="punch_card pr">
+      <a href="forum.php?mod=misc&action=nav" onclick="showWindow('nav', this.href, 'get', 0);"> <span class="icon_bbs btn_sign bigfs fs20">
+            <em>我要爆料</em>
+     </span></a>
+    </div>
+   	<div class="tj" id="index_scroll">
+  <ul> 	 	 {eval	
+	$usernum = DB::result_first("SELECT count(*) FROM ".DB::table('common_member'));
+    $todaypost = DB::result_first("SELECT sum(todayposts) FROM ".DB::table('forum_forum')." WHERE status=1");
+    $post = DB::result_first("SELECT sum(posts) FROM ".DB::table('forum_forum')." WHERE status=1");
+     $query = DB::query("SELECT doid,uid,username,message,dateline FROM ".DB::table('home_doing')." ORDER BY doid desc limit 4");while($item=DB::fetch($query))$kx_mz[]=$item;
+}
+  <li><p class="pl10">共有 <em class="ml5 mr5 c_red fs14 fw">$post</em>个主题帖</p>
+</li>
+                        <li><p class="pl10">今日发帖 <em class="ml5 mr5 c_red fs14 fw">$todaypost</em>篇</p>
+</li>
+             <li><p class="pl10">共有会员 <em class="ml5 mr5 c_red fs14 fw">$usernum</em>名</p>
+</li>
+   
+   </ul></div>       
+        </div>
+ <div class="clear"></div>
+        <div class="titless clearfix">
+            <div class="t_left"><span class="fs16 bigfs gc3">政务<em class="c_red">互联</em></span></div><div class="t_right tar w130">&nbsp;</div>
+        </div>
+        <div class="w220">
+			<!--[diy=tuw]--><div id="tuw" class="area"></div><!--[/diy]-->
+</div>
+
+<div class="blank5"></div>
+<div class="ad_290 mb5"><!--[diy=tuad]--><div id="tuad" class="area"></div><!--[/diy]-->
+</div><div class="blank5"></div>
+
+   <div class="titless clearfix">
+                <div class="t_left w90"><span class="fs16 bigfs c_red">24小时<em class="gc3">热点</em></span></div><div class="t_right tar w120">&nbsp;</div>
+            </div>
+<!--[diy=24]--><div id="24" class="area"></div><!--[/diy]-->
+<div class="clear"></div>
+
+<div id="bbs_ad_562467"><!--[diy=24ad]--><div id="24ad" class="area"></div><!--[/diy]-->
+</div>
+   <div class="titless clearfix">
+                <div class="t_left w110"><span class="fs16 bigfs c_red">48小时<em class="gc3">风向标</em></span></div><div class="t_right tar w100">&nbsp;</div>
+            </div>
+<!--[diy=48]--><div id="48" class="area"></div><!--[/diy]-->
+</div></div></div>
+<div class="wp"><!--[diy=diy_ade]--><div id="diy_ade" class="area"></div><!--[/diy]--></div>
+    <div class="blank10"></div>
+<div class="wapper"><div class="pinpai"><dl><dt>友情链接：</dt><dd><!--[diy=jujiao18]--><div id="jujiao18" class="area"></div><!--[/diy]--></dd></dl><div class="clear"></div></div></div>
+
+<div class="blankl10"></div>
+<script src="$_G['style']['styleimgdir']/js/forum_slide.js"></script>
+<script type="text/javascript">
+	(function($){$(document).ready(function(){
+	$(".hots_list li").hover(function(){
+        $(this).addClass("hover")              
+     },function(){
+		$(this).removeClass("hover")                            
+	})
+	    
+})	})(jQuery);	</script>
+<script src="$_G['style']['styleimgdir']/js/scroll.js" type="text/javascript"></script>
+<script type="text/javascript">
+	(function($){$(document).ready(function(){
+		$("#index_scroll").Scroll({line:1,speed:1000,timer:5000,up:"down_arrow"});
+		$("#lhrb").Scroll({line:3,speed:1000,timer:5000,up:"down_arrow"});
+});
+	})(jQuery);	</script>
+
+<!--{subtemplate common/footer}-->
+
+

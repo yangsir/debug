@@ -1,0 +1,51 @@
+<!--{eval require DISCUZ_ROOT.'./template/lyrs_mobile/touch/common/language.'.currentlang().'.php'; loadcache('lyrs_mobile_setting'); $setting = dunserialize($_G['cache']['lyrs_mobile_setting']);}--><!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta http-equiv="Cache-control" content="{if $_G['setting']['mobile'][mobilecachetime] > 0}{$_G['setting']['mobile'][mobilecachetime]}{else}no-cache{/if}" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+<meta name="format-detection" content="telephone=no" />
+
+<meta name="keywords" content="{if !empty($metakeywords)}{echo dhtmlspecialchars($metakeywords)}{/if}" />
+
+<meta name="description" content="{if !empty($metadescription)}{echo dhtmlspecialchars($metadescription)} {/if},$_G['setting']['bbname']" />
+
+<!--{if $_G['basescript'] == 'portal'}--><base href="{$_G['siteurl']}" /><!--{/if}-->
+
+<title><!--{if $_G['basescript'] == 'forum' && CURMODULE == 'index' && empty($_G['mod']) && $_GET['forumlist'] != 1}-->$_G['setting']['bbname'] - <!--{else}--><!--{if !empty($navtitle)}--><!--{if $_G['basescript'] == 'forum' && $_G['mod'] == 'index'}-->$language['homepage']<!--{elseif $_G['basescript'] == 'forum' && $_G['mod'] == 'portal'}-->$language['portal']<!--{elseif $_G['basescript'] == 'forum' && $_G['mod'] == 'forum'}-->$language['forum']<!--{else}-->$navtitle<!--{/if}--> - <!--{/if}--><!--{if empty($nobbname)}--> $_G['setting']['bbname'] - <!--{/if}--><!--{/if}--> {lang waptitle}</title>
+
+<link rel="stylesheet" href="{STATICURL}image/mobile/style.css" type="text/css" media="all">
+
+<link rel="stylesheet" href="template/lyrs_mobile/touch/common/stylesheet.css?{VERHASH}" type="text/css" media="all">
+
+<script src="{STATICURL}js/mobile/jquery-1.8.3.min.js?{VERHASH}"></script>
+
+<script type="text/javascript">var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', FORMHASH = '{FORMHASH}', charset = '{CHARSET}', discuz_uid = '$_G[uid]', discuz_fid = '$_G[fid]', discuz_tid = '$_G[tid]', discuz_firstpid = '$_G[forum_firstpid]', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G[setting][showusercard]}', addelay = '{echo empty($setting[addelay]) ? 5000 : ($setting[addelay] * 1000);}', swdelay = '{echo empty($setting[swdelay]) ? 5000 : ($setting[swdelay] * 1000);}', language = {'loading':' {$language[loading]}', 'view_more': '$language[view_more]'}, mobileforumview = '{$_G[setting][mobile][mobileforumview]}', attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G[setting][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G[siteurl]', JSPATH = '$_G[setting][jspath]';</script>
+
+<script src="{STATICURL}js/mobile/common.js?{VERHASH}" charset="{CHARSET}"></script>
+
+<script src="template/lyrs_mobile/touch/javascript/javascript.js?{VERHASH}" charset="{CHARSET}"></script>
+
+<style>.nav, .button, .button2, .button3, .btn_pn_blue, .btn_login .pn, .btn_register .pn, .btn_login .pn:hover, .btn_register .pn:hover, .search_tab a.on { background-color: $setting[onekeycolor]; }{if $setting[fixedhead]}.header { position: fixed; top: 0; z-index: 99 } .header-bg { height: 44px; }{/if} $setting[customcss]</style>
+
+</head>
+
+
+
+<body class="bg">
+
+<!--{hook/global_header_mobile}-->
+
+<!--{if $setting['mobiletip']}-->
+
+<!--{eval $mobiletip = ob_get_contents(); ob_end_clean();}-->
+
+<!--{echo preg_replace('/<a href="http:\/\/www.discuz.net\/mobile.php\?platform=(ios|android|windowsphone)">(.+?)<\/a>/', '', $mobiletip);}-->
+
+<!--{/if}-->

@@ -1,0 +1,32 @@
+<tbody id="autolist_{$value[cid]}">
+  <tr>
+    <td class="threadarea" {if $_G[uid]}onclick="managepost($value['cid'])"{else}onclick="goto('member.php?mod=logging&action=login')"{/if}>
+      <div >
+        <div class="cl postuser">
+          <!--{avatar($value[authorid],middle)}-->
+          <h3>{$value[author]}</h3>
+          <p><!--{date($value[dateline])}--></p>
+        </div>
+        <div class="viewpost">
+        <!--{if $value[status] == 0 || $value[authorid] == $_G[uid] || $_G[adminid] == 1}-->$value[message]<!--{else}--> {lang moderate_not_validate} <!--{/if}-->
+        </div>
+      </div>
+
+      <div id="manage_$value['cid']" class="managepost" style="display:none">
+        <ul>
+          <!--{if $value[authorid]==$_G[uid]}-->
+          <li><a href="home.php?mod=spacecp&ac=comment&op=edit&cid=$value[cid]&handlekey=editcommenthk_{$value[cid]}" >{lang edit}</a></li>
+          <!--{/if}-->
+          <!--{if $value[authorid]==$_G[uid] || $value[uid]==$_G[uid] || checkperm('managecomment')}-->
+          <li><a href="home.php?mod=spacecp&ac=comment&op=delete&cid=$value[cid]&handlekey=delcommenthk_{$value[cid]}" >{lang delete}</a></li>
+          <!--{/if}-->
+          <!--{if $value[authorid]!=$_G[uid] && ($value['idtype'] != 'uid' || $space[self]) && $value[author]}-->
+          <li><a href="home.php?mod=spacecp&ac=comment&op=reply&cid=$value[cid]&feedid=$feedid&handlekey=replycommenthk_{$value[cid]}" >{lang reply}</a></li>
+          <!--{/if}-->
+        </ul>
+      </div>
+
+    </td>
+  </tr>
+
+</tbody>

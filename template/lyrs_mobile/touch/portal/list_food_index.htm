@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gbk">
+   <meta name="author" content="www.frebsite.nl">
+   <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes">
+   <meta name="keywords" content="成都美食手机版,成都美食,成都美食论坛,成都美食攻略,成都美食交流,成都餐饮论坛">
+   <meta name="description" content="成都美食手机版,成都美食,成都美食论坛,成都美食攻略,成都美食交流,成都餐饮论坛">
+<title>成都美食手机版</title>
+<meta name="Keywords" content="成都美食手机版,成都美食,成都美食论坛,成都美食攻略,成都美食交流,成都餐饮论坛" >
+<meta name="Description" content="成都美食手机版,成都美食,成都美食论坛,成都美食攻略,成都美食交流,成都餐饮论坛" >
+<link type="text/css" rel="stylesheet" href="/mfood/mobile.css">
+<link href="/mfood/links.css" rel="stylesheet" type="text/css">
+<script src="/mfood/jquery.js" language="javascript" type="text/javascript"></script>
+<script language="javascript" type="text/javascript" src="/mfood/public.js"></script>
+<script type="text/javascript" src="/mfood/jquery.SuperSlide.js"></script>
+</head>
+
+<body>
+<!--{template common/header}-->
+
+        <section class="main" style="margin-top:0">
+
+                    <!-- Banner -->        
+
+    <!--Чhtml?-->
+<div class="mBan2">
+<div id="slideBox" class="slideBox">
+    <div class="hd">
+        <ul><li class=""></li><li class="on"></li><li class=""></li></ul>
+    </div>
+    <div class="bd" style="height: 321px;">
+        <ul style="position: relative; width: 640px; height: 0px;">
+		<!--{block/3631}-->
+ <li style="position: absolute; width: 640px; left: 0px; top: 0px; display: none;"><a href="[slidelist:link]" target="_blank"  class="item"><img src="[slidelist:pic]" alt="[slidelist:title]" /></a></li>
+        </ul>
+    </div>
+</div>
+</div>
+<script language="javascript">
+jQuery(".slideBox").slide({mainCell:".bd ul",effect:"fold",autoPlay:true,trigger:"click"});
+</script>
+<!--Чhtml-->  
+          <!-----menu_index----->
+<ul class="index-nav">
+    <li>
+    <a href="/wap/about/?24.html">
+    <img src="/images/m/btn1.jpg" alt="">
+    <span>关于</span>
+    </a>
+    </li>
+    <li>
+    <a href="./list/?1_1.html">
+    <img src="/images/m/btn2.jpg" alt="">
+    <span>新闻</span>
+    </a>
+    </li>
+    <li>
+    <a href="/wap/gbook/?18_1.html">
+    <img src="/images/m/btn3.jpg" alt="">
+    <span>留言</span>
+    </a>
+    </li>
+    <li>
+    <a href="./about/?19.html">
+    <img src="/images/m/btn4.jpg" alt="?">
+    <span>联系</span>
+    </a>
+    </li>
+</ul>
+         <!-- product-->         
+                <div class="title">
+                    <p>产品展示</p>
+                    <a href="./list/?5_1.html" title="">>>&nbsp;更多</a>
+                    <img src="/index_files/titlebg.jpg">
+                </div>
+                <ul class="index-pro">
+				 {aspcms:content sort=5 num=8 order=orde}
+                                  <li>
+<a href="[content:link]" title="[content:title]" class="index-pro-img"><img src="[content:pic]" alt="[content:title]" width="290" height="200"  /></a>
+<a href="[content:link]" title="[content:title]">[content:title]</a>
+                                  </li>
+{/aspcms:content}
+                       
+                                    </ul>
+        
+         <!---->
+                <div class="title">
+                    <p>新闻中心</p>
+                    <a href="./list/?1_1.html" title="">>>&nbsp;更多</a>
+                    <img src="/index_files/titlebg.jpg">
+                </div>
+                                    <div class="news_top">
+									 
+							{aspcms:product sort=1 num=1}<a href="[product:link]"><img src="" >
+                        <a href="[product:link]" title="" class="news-img">
+                            <img src="[product:pic]" alt="" onerror="subImg(this);">
+                        </a>
+                        <p><a href="[product:link]" title="[product:title]">[product:title len=15]</a></p>
+                        <div>[product:desc len=140]</div>
+						{/aspcms:product}
+                    </div>
+                                <ul class="index-news">
+								{aspcms:product sort=1 num=2}
+                                    <li><a href="[product:link]">[product:title len=15]</a></li>
+					{/aspcms:product}
+                </ul>
+                
+                <div class="title">
+                <p>企业荣誉</p>
+                <a href="./about/?24.html" title="">>>&nbsp;更多</a>
+                <img src="/index_files/titlebg.jpg">
+                </div>
+                <ul class="index-case">
+				{aspcms:product sort=15 num=3}
+                                              <li>
+                    <a href="[product:link]" title="" class="index-case-img">
+                    <img src="[product:pic]" alt="" onerror="subImg(this);"></a>
+                    <a href="[product:link]" title="">[product:title len=15]</a>
+                    </li>
+					{/aspcms:product}
+                   
+                </ul>
+                <a class="down" title="电话"><img src="/index_files/down.jpg" alt="??"></a>
+       </section> 
+        
+<!--{template common/footer}-->
+</body></html>

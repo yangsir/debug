@@ -1,0 +1,54 @@
+
+/*	leftside	*/
+
+.wapper_big {
+  width: 1275px;
+  margin: 0 auto; }
+#left_side_bar {
+  position: absolute;
+  left: -135px;
+  width: 128px;
+  padding: 1px;
+  border: 1px solid #d7e1f4;
+  background: #fff;
+  z-index: 8; }
+#left_side_bars {  position: absolute;
+height:620px;overflow-x: hidden;  width: 128px;
+  padding: 1px;
+  border: 1px solid #d7e1f4;
+  background: #fff;
+  z-index: 8; }
+
+  #left_side_bar p {
+    width: 128px;
+    height: 37px;
+    overflow: hidden;
+    background: url(left_bar.png) 0 0 no-repeat;
+    text-indent: -9999px; }
+  #left_side_bar dl {
+    border-bottom: 1px solid #f2f2f2; }
+    #left_side_bar dl dt {
+      font-size: 16px;
+      font-weight: 700;
+      height: 30px;
+      line-height: 30px;
+      color: #0460BA;
+      background: #EEF9FF;
+      padding-left: 10px;
+      cursor: pointer; }
+    #left_side_bar dl dd {
+      font-size: 14px;
+      color: #575757;
+      padding: 5px 0 5px 10px; }
+      #left_side_bar dl dd a {
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        color: #575757; }
+      #left_side_bar dl dd a:hover {
+        color: #045FB9; }
+    #left_side_bar dl .wc {
+      color: #ffffff; }
+    #left_side_bar dl .sbc {
+      color: #EEF9FF; }
+

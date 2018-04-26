@@ -1,0 +1,37 @@
+	<script src="$_G['style']['styleimgdir']/code/code1.js" type="text/javascript"></script>
+<script src="$_G['style']['styleimgdir']/code/code2.js" type="text/javascript"></script><style>
+#postlist .vwthd{position:relative;overflow:visible;padding-right:115px !important;display:block;z-index:99;}
+.viewtop{overflow:visible;}
+.erwmx{position:absolute;top:0px;right:0px;}
+.erwmx .erwmx_img{width:45px;height:38px;background:url($_G['style']['styleimgdir']/thread_icons.png) no-repeat;}
+.ie6 .erwmx .erwmx_img{width:45px;height:38px;background:url($_G['style']['styleimgdir']/thread_icons.png) no-repeat;}
+#erwmx_menu{z-index:301;border:#CCC 1px solid;padding:15px 10px;position:absolute;width:190px;background:#fafafa;height:252px;top:-1px;right:-1px;cursor:pointer;}
+.viewtop #erwmx_menu{top:0px;right:0px;}
+#erwmx_menu p{text-align:center;}
+#erwmx_menu li{text-align:center;line-height:26px;height:26px; margin-top:5px}
+#erwmx_menu .sys{font:500 16px/38px "Microsoft Yahei";COLOR:#333;}
+#erwmx_menu .jc{font:500 12px/38px "Microsoft Yahei";}
+#erwmx_menu .jc a{color:#bebebe; float:right}
+.small{width:30px;height:30px;position:absolute;top:84px;left:90px;}
+</style>
+<span class="erwmx"><div class="erwmx_img" id="erwmx" onmouseover="showMenu({'ctrlid':this.id,'pos':'*'});" /></div></span>
+
+<div id="erwmx_menu" style="display:none;">
+<p>	
+<div id="qrcodeCanvas" style="margin:10px"></div>
+  <script style='text/javascript'>
+      jQuery('#qrcodeCanvas').qrcode({
+		text	: "{$_G['siteurl']}/forum.php?mod=viewthread&tid=$_G[tid]",
+             width: 167,//二维码宽度
+             height: 167//二维码高度
+      });
+    </script>
+</p>
+<ul>
+<li class="sys">微信扫一扫  转发朋友圈</li>
+<li class="jc"><A href="#" target="_blank">教程：怎么扫描二维码</A></li>
+</ul>
+
+<img src="$_G['style']['styleimgdir']/ewm.png" class="small"/>
+
+</div>

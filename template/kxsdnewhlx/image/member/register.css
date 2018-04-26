@@ -1,0 +1,19 @@
+body{ background: url(bg_register_new.png) repeat scroll center top transparent;}
+.wp{ width:980px ;}
+.rfm { width: 552px;}
+.bm { border: 1px solid #fff;background: none repeat scroll 0% 0% #FFF;}
+.teb-mod { margin-top:30px}
+.teb-mod .step {padding-right: 63px; background: url('bg_fast_register.png') repeat scroll 95px -180px transparent;}
+.teb-mod span, .link0 .teb-mod a {float: left;display: block;padding-top: 10px;margin-right: 14px; height: 35px;overflow: hidden; color: #414141; margin-left:50px}
+.teb-mod span em {border-bottom: 2px solid #FE821E;padding-bottom: 5px;}
+.teb-mod em {font: 400 22px/30px "micorosoft yahei",simhei;}
+.register-teb p { float: right;display: block;padding-top: 10px;font: 400 16px/30px simsun;color: #010101; margin-right:60px}
+.rfm .p_tip { position: absolute; z-index: 2;display: none;padding-left: 10px;width: 240px;background: none repeat scroll 0% 0% #FFF;color: #666; font-style: normal;}
+.rfm .p_chk { position: absolute; z-index: 1;padding-left: 10px; width: 240px; color: #F00;font-weight: 700;   font-family: Tahoma,'Microsoft Yahei','Simsun';}
+ .register-rod { float: right; padding-left: 25px;width: 315px;  border-left: 1px solid #DCDCDC;overflow: hidden;margin-top: 27px;}
+.register-rod h2 {color: #000;font: 700 18px/30px "micorosoft yahei";}
+.register-rod p { margin-top: 15px; padding-left: 35px;font: 400 12px/25px "micorosoft yahei"; color: #6A6A6A;background: url('icon_common.png') no-repeat scroll 0px -1904px transparent;}
+.register-rod img { margin-top: 27px; width: 310px; height: 380px; border: medium none;}
+.pnc, a.pnc { background-color: #ccc;}
+.pn { height: 50px;border: 0px solid #999; background: url('none') repeat-x scroll 0px 0px #ccc;cursor: pointer; box-shadow: 0px 1px 0px #E5E5E5; width:220px;font: 400 22px/50px "micorosoft yahei","ºÚÌå";}
+hr.l {background:#fff;border:none;color:#fff;height:1px;}

@@ -1,0 +1,37 @@
+<!--{block backurl}-->
+<a href="home.php?mod=space&uid=$_G[uid]&do=profile" class="logo"><img src="/template/lyrs_mobile/touch/style/logoback.png" />{lang friends}</a>
+<!--{/block}-->
+<!--{template common/header1}-->
+<!--{eval $nohtml['footer']='1';}-->
+<div class="bgfff" id="minh">
+<!--{if $list}-->
+  <table cellspacing="0" cellpadding="0" id="listtableid" class="friends">
+    <!--{loop $list $key $value}-->
+    <tbody id="autolist_{$value[uid]}">
+      <tr>
+        <td onClick="goto('home.php?mod=space&uid=$value[uid]&do=thread&view=me&from=space')"><!--{avatar($value[uid],middle)}-->$value[username]</td>
+      </tr>
+    </tbody>
+    <!--{/loop}-->
+  </table>
+  
+  <!--{eval $realpages = @ceil(($count)/$perpage);}-->
+  <!--{eval $maxpage = ($realpages > 1000) ? 1000 : $realpages;}-->
+  <!--{eval $nextpage = ($page + 1) > $maxpage ? 1 : ($page + 1);}-->
+  
+  <!--{eval $multipage_more = "home.php?mod=space&do=friend".'&page='.$nextpage;}-->
+
+  <!--{if $multi}-->
+  <a href="javascript:;" rel="$multipage_more" curpage="$page" id="autopbn" totalpage="$maxpage" >$comeing_weixin[2]</a>
+  <!--{template common/autoloadpage}-->
+  <span id="fd_page_bottom">$multi</span>
+  <!--{/if}-->
+<!--{else}-->
+  
+<!--{/if}-->
+</div>
+<script language="javascript">
+cheight=document.body.clientHeight;
+document.getElementById('minh').style.minHeight=cheight-86+'px';
+</script>
+<!--{template common/footer}-->
